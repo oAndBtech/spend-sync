@@ -24,6 +24,8 @@ class ProfileButton extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return InkWell(
+      highlightColor: Colors.transparent,
+      splashColor: Colors.transparent,
       onTap: onTap,
       borderRadius: BorderRadius.circular(36),
       child: Container(
