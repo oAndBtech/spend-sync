@@ -16,39 +16,62 @@ class NewAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xff393E46),
-      appBar: AppBar(
-        backgroundColor: const Color(0xff131921),
-        title: Text(
-          title,
-          style: const TextStyle(color: Color(0xffEEEEEE)),
-        ),
-        leading: leadingIcon == 1
-            ? IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.menu),
-                color: const Color(0xffEEEEEE),
-              )
-            : IconButton(
-                onPressed: () {},
-                icon: const Icon(FontAwesomeIcons.arrowLeft),
-                color: const Color(0xffEEEEEE),
-              ),
-        actions: <Widget>[
-          isNotification
-              ? IconButton(
-                  onPressed: () {},
-                  icon: const Icon(FontAwesomeIcons.bell), // icon should be changed
-                  color: const Color(0xffEEEEEE),
-                )
-              : IconButton(              // try to remove this
-                  onPressed: () {},
-                  icon: const Icon(Icons.adb_outlined),
-                  color: const Color(0xff131921),
-                ),
-        ],
+    return Container(
+      height: 72.0,
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        shape: BoxShape.rectangle,
+        color: Color(0xff131921),
       ),
+      child: Row(children: [
+        leadingIcon == 1
+            ? Padding(
+                padding: const EdgeInsets.only(left: 28),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    FontAwesomeIcons.bars,
+                    size: 26,
+                  ),
+                  color: const Color(0xffEEEEEE),
+                ),
+              )
+            : Padding(
+                padding: const EdgeInsets.only(left: 28),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(FontAwesomeIcons.arrowLeft),
+                  color: const Color(0xffEEEEEE),
+                ),
+              ),
+        const SizedBox(
+          width: 12,
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 2),
+          child: Text(
+            title,
+            style: GoogleFonts.inter(
+              color: const Color(0xffEEEEEE),
+              fontWeight: FontWeight.w500,
+              letterSpacing: -0.2,
+              fontSize: 26.0,
+            ),
+          ),
+        ),
+        const Spacer(),
+        isNotification
+            ? Padding(
+                padding: const EdgeInsets.only(right: 26),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                      FontAwesomeIcons.solidBell), // icon should be changed
+                  color: const Color(0xffEEEEEE),
+                ),
+              )
+            : const SizedBox.shrink(),
+      ]),
     );
   }
 }
