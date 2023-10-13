@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:spend_sync/const/colors.dart';
 
 // Someone requested and you paid
 
@@ -47,14 +48,14 @@ class _SplitHistoryState extends State<SplitHistory3> {
               height: 1,
               width: width * 0.8,
               decoration: BoxDecoration(
-                color: const Color(0xffEEEEEE).withOpacity(0.8),
+                color: darkModeColors().textColor.withOpacity(0.8),
               ),
             ),
           ),
           Text(
             '${widget.whoRequested} requested for ${widget.splitTitle}',
             style: GoogleFonts.inter(
-              color: const Color(0xffEEEEEE),
+              color: darkModeColors().textColor,
               fontWeight: FontWeight.w300,
               letterSpacing: -0.2,
               fontSize: 16.0,
@@ -64,7 +65,7 @@ class _SplitHistoryState extends State<SplitHistory3> {
           Text(
             widget.date,
             style: GoogleFonts.inter(
-              color: const Color(0xffEEEEEE),
+              color: darkModeColors().textColor,
               fontWeight: FontWeight.w300,
               letterSpacing: -0.2,
               fontSize: 16.0,
@@ -74,7 +75,7 @@ class _SplitHistoryState extends State<SplitHistory3> {
           Text(
             widget.billAmount,
             style: GoogleFonts.inter(
-              color: const Color(0xffEEEEEE),
+              color: darkModeColors().textColor,
               fontWeight: FontWeight.w700,
               letterSpacing: -0.2,
               fontSize: 24.0,
@@ -84,7 +85,7 @@ class _SplitHistoryState extends State<SplitHistory3> {
           Text(
             '${widget.paidNum}/${widget.totalPayee} Paid',
             style: GoogleFonts.inter(
-              color: const Color(0xffEEEEEE),
+              color: darkModeColors().textColor,
               fontWeight: FontWeight.w300,
               letterSpacing: -0.2,
               fontSize: 16.0,
@@ -95,7 +96,7 @@ class _SplitHistoryState extends State<SplitHistory3> {
             child: Text(
               'You Paid!',
               style: GoogleFonts.inter(
-              color: const Color(0xffEEEEEE),
+              color: darkModeColors().textColor,
               fontWeight: FontWeight.w500,
               letterSpacing: -0.2,
               fontSize: 16.0,
@@ -108,7 +109,7 @@ class _SplitHistoryState extends State<SplitHistory3> {
               height: 1,
               width: width * 0.8,
               decoration: BoxDecoration(
-                color: const Color(0xffEEEEEE).withOpacity(0.8),
+                color: darkModeColors().textColor.withOpacity(0.8),
               ),
             ),
           ),

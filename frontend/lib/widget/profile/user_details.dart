@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:spend_sync/const/colors.dart';
 
 class UserDetails extends StatelessWidget {
   final String imageLink;
@@ -32,7 +33,7 @@ class UserDetails extends StatelessWidget {
           style: GoogleFonts.inter(
             fontSize: 32.0,
             letterSpacing: -0.2,
-            color: const Color(0xffEEEEEE),
+            color: darkModeColors().textColor,
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -41,7 +42,7 @@ class UserDetails extends StatelessWidget {
           style: GoogleFonts.inter(
             fontSize: 15.0,
             letterSpacing: -0.2,
-            color: const Color(0xffEEEEEE).withOpacity(0.6),
+            color: darkModeColors().textColor.withOpacity(0.6),
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -56,7 +57,7 @@ class UserDetails extends StatelessWidget {
               style: GoogleFonts.inter(
                 fontSize: 15.0,
                 letterSpacing: -0.2,
-                color: const Color(0xffEEEEEE).withOpacity(0.6),
+                color: darkModeColors().textColor.withOpacity(0.6),
                 fontWeight: FontWeight.w400,
               ),
             ),
@@ -80,7 +81,7 @@ class UserDetails extends StatelessWidget {
                 child: FaIcon(
                   FontAwesomeIcons.solidCopy,
                   size: 15,
-                  color: const Color(0xffEEEEEE).withOpacity(0.6),
+                  color: darkModeColors().textColor.withOpacity(0.6),
                 ),
               ),
             )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:spend_sync/const/colors.dart';
 import 'package:spend_sync/widget/profile/app_bar.dart';
 import 'package:spend_sync/widget/profile/profile_button.dart';
 import 'package:spend_sync/widget/profile/user_details.dart';
@@ -16,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            NewAppBar(isNotification: true, title: '123', leadingIcon: 1),
+            const NewAppBar(isNotification: true, title: 'Profile', leadingIcon: 1),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -36,25 +37,25 @@ class ProfileScreen extends StatelessWidget {
                         onTap: () {},
                         buttonText: 'Settings',
                         buttonType: 2,
-                        icon: const Icon(
+                        icon:  Icon(
                           FontAwesomeIcons.gear,
-                          color: Color(0xffEEEEEE),
+                          color: darkModeColors().textColor,
                         )),
                     ProfileButton(
                         onTap: () {},
                         buttonText: 'About',
                         buttonType: 4,
-                        icon: const Icon(
+                        icon:  Icon(
                           FontAwesomeIcons.circleQuestion,
-                          color: Color(0xffEEEEEE),
+                          color: darkModeColors().textColor,
                         )),
                     ProfileButton(
                         onTap: () {},
                         buttonText: 'Share',
                         buttonType: 3,
-                        icon: const Icon(
+                        icon: Icon(
                           FontAwesomeIcons.share,
-                          color: Color(0xffEEEEEE),
+                          color: darkModeColors().textColor,
                         )),
                     const SizedBox(
                       height: 28.0,
@@ -63,33 +64,33 @@ class ProfileScreen extends StatelessWidget {
                         onTap: () {},
                         buttonText: 'Contact Us',
                         buttonType: 2,
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.contact_support,
-                          color: Color(0xffEEEEEE),
+                          color: darkModeColors().textColor,
                         )),
                     ProfileButton(
                         onTap: () {},
                         buttonText: 'Feedback',
                         buttonType: 4,
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.rate_review_rounded,
-                          color: Color(0xffEEEEEE),
+                          color: darkModeColors().textColor,
                         )),
                     ProfileButton(
                         onTap: () {},
                         buttonText: 'Report a bug',
                         buttonType: 4,
-                        icon: const Icon(
+                        icon: Icon(
                           FontAwesomeIcons.bug,
-                          color: Color(0xffEEEEEE),
+                          color: darkModeColors().textColor,
                         )),
                     ProfileButton(
                         onTap: () {},
                         buttonText: 'Rate our app',
                         buttonType: 3,
-                        icon: const Icon(
+                        icon: Icon(
                           FontAwesomeIcons.thumbsUp,
-                          color: Color(0xffEEEEEE),
+                          color: darkModeColors().textColor,
                         )),
                     const SizedBox(
                       height: 28.0,
@@ -98,9 +99,9 @@ class ProfileScreen extends StatelessWidget {
                         onTap: () {},
                         buttonText: 'Logout',
                         buttonType: 1,
-                        icon: const Icon(
+                        icon: Icon(
                           FontAwesomeIcons.rightFromBracket,
-                          color: Color(0xffEEEEEE),
+                          color: darkModeColors().textColor,
                         )),
                         const SizedBox(
                       height: 28.0,

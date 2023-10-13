@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:spend_sync/const/colors.dart';
 
 // Someone requested
 
@@ -47,14 +48,14 @@ class _SplitHistoryState extends State<SplitHistory2> {
               height: 1,
               width: width * 0.8,
               decoration: BoxDecoration(
-                color: const Color(0xffEEEEEE).withOpacity(0.8),
+                color: darkModeColors().textColor.withOpacity(0.8),
               ),
             ),
           ),
           Text(
             '${widget.whoRequested} requested for ${widget.splitTitle}',
             style: GoogleFonts.inter(
-              color: const Color(0xffEEEEEE),
+              color: darkModeColors().textColor,
               fontWeight: FontWeight.w300,
               letterSpacing: -0.2,
               fontSize: 16.0,
@@ -64,7 +65,7 @@ class _SplitHistoryState extends State<SplitHistory2> {
           Text(
             widget.date,
             style: GoogleFonts.inter(
-              color: const Color(0xffEEEEEE),
+              color: darkModeColors().textColor,
               fontWeight: FontWeight.w300,
               letterSpacing: -0.2,
               fontSize: 16.0,
@@ -74,7 +75,7 @@ class _SplitHistoryState extends State<SplitHistory2> {
           Text(
             widget.billAmount,
             style: GoogleFonts.inter(
-              color: const Color(0xffEEEEEE),
+              color: darkModeColors().textColor,
               fontWeight: FontWeight.w700,
               letterSpacing: -0.2,
               fontSize: 24.0,
@@ -84,7 +85,7 @@ class _SplitHistoryState extends State<SplitHistory2> {
           Text(
             '${widget.paidNum}/${widget.totalPayee} Paid',
             style: GoogleFonts.inter(
-              color: const Color(0xffEEEEEE),
+              color: darkModeColors().textColor,
               fontWeight: FontWeight.w300,
               letterSpacing: -0.2,
               fontSize: 16.0,
@@ -100,7 +101,7 @@ class _SplitHistoryState extends State<SplitHistory2> {
                 height: 40,
                 width: 82,
                 decoration: BoxDecoration(
-                    color: const Color(0xffD9D9D9),
+                    color: darkModeColors().textColor,
                     borderRadius: BorderRadius.circular(10)),
                 child: Row(
                   children: [
@@ -110,18 +111,18 @@ class _SplitHistoryState extends State<SplitHistory2> {
                     Text(
                       'Pay',
                       style: GoogleFonts.inter(
-                        color: const Color(0xff222831),
+                        color: darkModeColors().cardColor,
                         fontWeight: FontWeight.w300,
                         letterSpacing: -0.2,
                         fontSize: 18.0,
                       ),
                     ),
                     const Spacer(),
-                    const Padding(
-                      padding: EdgeInsets.only(right: 18),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 18),
                       child: Icon(
                         FontAwesomeIcons.chevronRight,
-                        color: Color(0xff222831),
+                        color: darkModeColors().cardColor,
                         size: 10.8,
                       ),
                     ),
@@ -136,7 +137,7 @@ class _SplitHistoryState extends State<SplitHistory2> {
               height: 1,
               width: width * 0.8,
               decoration: BoxDecoration(
-                color: const Color(0xffEEEEEE).withOpacity(0.8),
+                color: darkModeColors().textColor.withOpacity(0.8),
               ),
             ),
           ),

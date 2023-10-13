@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:spend_sync/const/colors.dart';
 
 class ProfileButton extends StatelessWidget {
   ProfileButton({
@@ -32,7 +33,7 @@ class ProfileButton extends StatelessWidget {
         height: 61,
         width: width * 0.85,
         decoration: BoxDecoration(
-            color: const Color(0xff222831).withOpacity(0.6),
+            color: darkModeColors().buttonColor,
             borderRadius: buttonType == 1
                 ? BorderRadius.circular(36)
                 : buttonType == 2
@@ -56,18 +57,18 @@ class ProfileButton extends StatelessWidget {
             Text(
               buttonText,
               style: GoogleFonts.inter(
-                  color: const Color(0xffEEEEEE),
+                  color: darkModeColors().textColor,
                   fontSize: 18.0,
                   letterSpacing: -0.2,
                   fontWeight: FontWeight.w400),
             ),
             const Spacer(),
             isArrow
-                ? const Padding(
-                  padding:  EdgeInsets.only(right: 24),
+                ?  Padding(
+                  padding:  const EdgeInsets.only(right: 24),
                   child:  Icon(
                       FontAwesomeIcons.chevronRight,
-                      color: Color(0xffEEEEEE),
+                      color: darkModeColors().textColor,
                       size: 16,
                     ),
                 )

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:spend_sync/const/colors.dart';
 
 class NewAppBar extends StatelessWidget {
   const NewAppBar({
@@ -19,9 +20,9 @@ class NewAppBar extends StatelessWidget {
     return Container(
       height: 72.0,
       width: double.infinity,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         shape: BoxShape.rectangle,
-        color: Color(0xff131921),
+        color: darkModeColors().primary,
       ),
       child: Row(children: [
         leadingIcon == 1
@@ -33,7 +34,7 @@ class NewAppBar extends StatelessWidget {
                     FontAwesomeIcons.bars,
                     size: 26,
                   ),
-                  color: const Color(0xffEEEEEE),
+                  color: darkModeColors().textColor,
                 ),
               )
             : Padding(
@@ -41,7 +42,7 @@ class NewAppBar extends StatelessWidget {
                 child: IconButton(
                   onPressed: () {},
                   icon: const Icon(FontAwesomeIcons.arrowLeft),
-                  color: const Color(0xffEEEEEE),
+                  color: darkModeColors().textColor,
                 ),
               ),
         const SizedBox(
@@ -52,7 +53,7 @@ class NewAppBar extends StatelessWidget {
           child: Text(
             title,
             style: GoogleFonts.inter(
-              color: const Color(0xffEEEEEE),
+              color: darkModeColors().textColor,
               fontWeight: FontWeight.w500,
               letterSpacing: -0.2,
               fontSize: 26.0,
@@ -67,7 +68,7 @@ class NewAppBar extends StatelessWidget {
                   onPressed: () {},
                   icon: const Icon(
                       FontAwesomeIcons.solidBell), // icon should be changed
-                  color: const Color(0xffEEEEEE),
+                  color: darkModeColors().textColor,
                 ),
               )
             : const SizedBox.shrink(),
