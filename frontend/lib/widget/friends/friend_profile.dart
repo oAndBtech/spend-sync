@@ -18,8 +18,6 @@ class MyFriendProfile extends StatelessWidget {
     return Container(
       width: 100,
       height: 130,
-      color: Color.fromARGB(255, 164, 42, 42),
-      // padding: ,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -30,7 +28,7 @@ class MyFriendProfile extends StatelessWidget {
             backgroundImage: AssetImage(profilePic),
             // backgroundColor: Color(0xff00ADB5),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             name,
             maxLines: 1,
