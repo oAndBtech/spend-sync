@@ -37,62 +37,79 @@ class _SplitHistoryState extends State<SplitHistory2> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double s = width*0.08;
 
-    return Container(
+    return SizedBox(
+      width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 10, bottom: 16),
-            child: Container(
-              height: 1,
-              width: width * 0.8,
-              decoration: BoxDecoration(
-                color: darkModeColors().textColor.withOpacity(0.8),
+            child: Center(
+              child: Container(
+                height: 1,
+                width: width * 0.8,
+                decoration: BoxDecoration(
+                  color: darkModeColors().textColor.withOpacity(0.8),
+                ),
               ),
             ),
           ),
-          Text(
-            '${widget.whoRequested} requested for ${widget.splitTitle}',
-            style: GoogleFonts.inter(
-              color: darkModeColors().textColor,
-              fontWeight: FontWeight.w300,
-              letterSpacing: -0.2,
-              fontSize: 16.0,
+          Padding(
+            padding:  EdgeInsets.only(left:  s ,right: 16),
+            child: Text(
+              '${widget.whoRequested} requested for ${widget.splitTitle}',
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: GoogleFonts.inter(
+                color: darkModeColors().textColor,
+                fontWeight: FontWeight.w300,
+                letterSpacing: -0.2,
+                fontSize: 16.0,
+              ),
             ),
           ),
           const SizedBox(height: 6),
-          Text(
-            widget.date,
-            style: GoogleFonts.inter(
-              color: darkModeColors().textColor,
-              fontWeight: FontWeight.w300,
-              letterSpacing: -0.2,
-              fontSize: 16.0,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            widget.billAmount,
-            style: GoogleFonts.inter(
-              color: darkModeColors().textColor,
-              fontWeight: FontWeight.w700,
-              letterSpacing: -0.2,
-              fontSize: 24.0,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            '${widget.paidNum}/${widget.totalPayee} Paid',
-            style: GoogleFonts.inter(
-              color: darkModeColors().textColor,
-              fontWeight: FontWeight.w300,
-              letterSpacing: -0.2,
-              fontSize: 16.0,
-            ),
-          ),
           Padding(
-            padding: const EdgeInsets.only(left: 100),
+            padding:  EdgeInsets.only(left:  s ,right: 16),
+            child: Text(
+              widget.date,
+              style: GoogleFonts.inter(
+                color: darkModeColors().textColor,
+                fontWeight: FontWeight.w300,
+                letterSpacing: -0.2,
+                fontSize: 16.0,
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          Padding(
+            padding:  EdgeInsets.only(left: s),
+            child: Text(
+              widget.billAmount,
+              style: GoogleFonts.inter(
+                color: darkModeColors().textColor,
+                fontWeight: FontWeight.w700,
+                letterSpacing: -0.2,
+                fontSize: 24.0,
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          Padding(
+            padding:  EdgeInsets.only(left: s),
+            child: Text(
+              '${widget.paidNum}/${widget.totalPayee} Paid',
+              style: GoogleFonts.inter(
+                color: darkModeColors().textColor,
+                fontWeight: FontWeight.w300,
+                letterSpacing: -0.2,
+                fontSize: 16.0,
+              ),
+            ),
+          ),
+          Center(
             child: InkWell(
               highlightColor: Colors.transparent,
               splashColor: Colors.transparent,
@@ -133,11 +150,13 @@ class _SplitHistoryState extends State<SplitHistory2> {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 10, bottom: 6),
-            child: Container(
-              height: 1,
-              width: width * 0.8,
-              decoration: BoxDecoration(
-                color: darkModeColors().textColor.withOpacity(0.8),
+            child: Center(
+              child: Container(
+                height: 1,
+                width: width * 0.8,
+                decoration: BoxDecoration(
+                  color: darkModeColors().textColor.withOpacity(0.8),
+                ),
               ),
             ),
           ),
