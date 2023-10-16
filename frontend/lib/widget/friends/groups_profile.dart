@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
 
-class ProfileItemWidget extends StatelessWidget {
-  const ProfileItemWidget({
+class GroupProfileItemWidget extends StatelessWidget {
+  const GroupProfileItemWidget({
     super.key,
     required this.name,
     required this.onTap,
@@ -32,7 +32,7 @@ class ProfileItemWidget extends StatelessWidget {
               radius: 30,
               backgroundImage: (profilePic != null && profilePic is String)
                   ? NetworkImage(profilePic!)
-                  : const AssetImage('assets/images/default_profile.png')
+                  : const AssetImage('assets/images/group_default.png')
                       as ImageProvider,
               child: const SizedBox.shrink(),
             ),

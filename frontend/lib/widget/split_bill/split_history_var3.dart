@@ -51,7 +51,7 @@ class _SplitHistoryState extends State<SplitHistory3> {
                 height: 1,
                 width: width * 0.8,
                 decoration: BoxDecoration(
-                  color: darkModeColors().textColor.withOpacity(0.8),
+                  color: darkModeColors().secondary.withOpacity(0.8),
                 ),
               ),
             ),
@@ -125,7 +125,7 @@ class _SplitHistoryState extends State<SplitHistory3> {
                 height: 1,
                 width: width * 0.8,
                 decoration: BoxDecoration(
-                  color: darkModeColors().textColor.withOpacity(0.8),
+                  color: darkModeColors().secondary.withOpacity(0.8),
                 ),
               ),
             ),

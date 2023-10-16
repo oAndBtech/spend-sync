@@ -5,7 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/screens/activity.dart';
 import 'package:spend_sync/screens/home.dart';
 import 'package:spend_sync/screens/profile.dart';
-import 'package:spend_sync/screens/split_bill.dart';
+import 'package:spend_sync/screens/split_bill/split_bill.dart';
+import 'package:spend_sync/widget/drawer.dart';
 
 // ignore: must_be_immutable
 class BottomNavBar extends StatefulWidget {
@@ -17,7 +18,9 @@ class BottomNavBar extends StatefulWidget {
   State<BottomNavBar> createState() => _BottomNavBarState();
 }
 
+
 class _BottomNavBarState extends State<BottomNavBar> {
+  
   int selectedIndex = 0;
   List<Widget> screens =[
     HomeScreen(),
@@ -35,6 +38,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: BottomNavBar.scaffoldKey,
+      drawer: SpendDrawer(profilePic: "profilePic", emailID: "emailID", userName: "userName"),
       body: IndexedStack(
         index: selectedIndex,
         children: screens,

@@ -26,38 +26,36 @@ class _SpendDrawerState extends State<SpendDrawer> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: UserAccountsDrawerHeader(
-                currentAccountPicture: CircleAvatar(
-                  child: ClipOval(
-                    child: Image.asset(widget.profilePic),
-                  ),
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                child: ClipOval(
+                  child: Image.asset(widget.profilePic),
                 ),
-                accountName: Padding(
-                  padding: const EdgeInsets.only(top: 24),
-                  child: Text(
-                    widget.userName,
-                    style: GoogleFonts.inter(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: -0.2,
-                      color: darkModeColors().textColor,
-                    ),
-                  ),
-                ),
-                accountEmail: Text(
-                  widget.emailID,
+              ),
+              accountName: Padding(
+                padding: const EdgeInsets.only(top: 24),
+                child: Text(
+                  widget.userName,
                   style: GoogleFonts.inter(
-                    color: darkModeColors().textColor.withOpacity(0.4),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w600,
                     letterSpacing: -0.2,
+                    color: darkModeColors().textColor,
                   ),
                 ),
-                decoration: BoxDecoration(
-                  color: darkModeColors().primary,
+              ),
+              accountEmail: Text(
+                widget.emailID,
+                style: GoogleFonts.inter(
+                  color: darkModeColors().textColor.withOpacity(0.4),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: -0.2,
                 ),
+              ),
+              decoration: BoxDecoration(
+                // border: Border.all(color: Colors.transparent),
+                color: darkModeColors().primary,
               ),
             ),
             ListTile(

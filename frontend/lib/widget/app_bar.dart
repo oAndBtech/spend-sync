@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:spend_sync/bottom_navbar.dart';
 import 'package:spend_sync/const/colors.dart';
 
 class NewAppBar extends StatelessWidget {
@@ -27,12 +28,14 @@ class NewAppBar extends StatelessWidget {
       child: Row(children: [
         leadingIcon == 1
             ? Padding(
-                padding: const EdgeInsets.only(left: 28),
+                padding: const EdgeInsets.only(left: 24),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    BottomNavBar.scaffoldKey.currentState!.openDrawer();
+                  },
                   icon: const Icon(
-                    FontAwesomeIcons.bars,
-                    size: 26,
+                    Icons.menu,
+                    size: 32,
                   ),
                   color: darkModeColors().textColor,
                 ),
@@ -67,7 +70,7 @@ class NewAppBar extends StatelessWidget {
                 child: IconButton(
                   onPressed: () {},
                   icon: const Icon(
-                      FontAwesomeIcons.solidBell), // icon should be changed
+                      FontAwesomeIcons.solidBell),
                   color: darkModeColors().textColor,
                 ),
               )

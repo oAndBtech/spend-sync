@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:spend_sync/const/colors.dart';
-import 'package:spend_sync/widget/profile/app_bar.dart';
+import 'package:spend_sync/widget/app_bar.dart';
 import 'package:spend_sync/widget/profile/profile_button.dart';
 import 'package:spend_sync/widget/profile/user_details.dart';
 
