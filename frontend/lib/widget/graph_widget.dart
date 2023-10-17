@@ -11,29 +11,36 @@ class GraphWidget extends StatefulWidget {
 }
 
 class _GraphWidgetState extends State<GraphWidget> {
-  List<Color> gradientColors = [
-    Color(0xff459AD8),
-    darkModeColors().blueColor
-  ];
+  List<Color> gradientColors = [Color(0xff459AD8), darkModeColors().blueColor];
 
   @override
   Widget build(BuildContext context) {
-    return LineChart(
-      mainData()
+    return AspectRatio(
+      aspectRatio: 1.70,
+      child: Padding(
+        padding: const EdgeInsets.only(
+          right: 18,
+          left: 12,
+          top: 24,
+          bottom: 12,
+        ),
+        child: LineChart(
+          mainData(),
+        ),
+      ),
     );
   }
 
-    Widget bottomTitleWidgets(double value, TitleMeta meta) {
+  Widget bottomTitleWidgets(double value, TitleMeta meta) {
     TextStyle style = GoogleFonts.inter(
-      fontWeight: FontWeight.w500,
-      fontSize: 14,
-      color: darkModeColors().textColor,
-      letterSpacing: -0.2
-    );
+        fontWeight: FontWeight.w500,
+        fontSize: 14,
+        color: darkModeColors().textColor,
+        letterSpacing: -0.2);
     Widget text;
     switch (value.toInt()) {
       case 2:
-        text =  Text('Mon', style: style);
+        text = Text('Mon', style: style);
         break;
       case 4:
         text = Text('Tue', style: style);
@@ -41,7 +48,7 @@ class _GraphWidgetState extends State<GraphWidget> {
       case 6:
         text = Text('Wed', style: style);
         break;
-         case 8:
+      case 8:
         text = Text('Thu', style: style);
         break;
       case 10:
@@ -50,7 +57,7 @@ class _GraphWidgetState extends State<GraphWidget> {
       case 12:
         text = Text('Sat', style: style);
         break;
-        case 0:
+      case 0:
         text = Text('Sun', style: style);
         break;
       default:
@@ -66,11 +73,10 @@ class _GraphWidgetState extends State<GraphWidget> {
 
   Widget leftTitleWidgets(double value, TitleMeta meta) {
     TextStyle style = GoogleFonts.inter(
-      fontWeight: FontWeight.w500,
-      fontSize: 14,
-      color: darkModeColors().textColor,
-      letterSpacing: -0.2
-    );
+        fontWeight: FontWeight.w500,
+        fontSize: 14,
+        color: darkModeColors().textColor,
+        letterSpacing: -0.2);
     String text;
     switch (value.toInt()) {
       case 1:
@@ -97,7 +103,7 @@ class _GraphWidgetState extends State<GraphWidget> {
         horizontalInterval: .5,
         verticalInterval: .5,
         getDrawingHorizontalLine: (value) {
-          return  FlLine(
+          return FlLine(
             color: darkModeColors().primary.withOpacity(0.4),
             strokeWidth: 1,
           );
@@ -162,8 +168,8 @@ class _GraphWidgetState extends State<GraphWidget> {
           barWidth: 3.5,
           isStrokeCapRound: true,
           dotData: const FlDotData(
-            // show: false,
-          ),
+              // show: false,
+              ),
           belowBarData: BarAreaData(
             show: true,
             gradient: LinearGradient(
