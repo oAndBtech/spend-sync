@@ -93,6 +93,5 @@ class _SplitTabState extends State<SplitTab> {
         ),
       ),
     );
-    ;
   }
 }
