@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
 
+// ignore: must_be_immutable
 class ProfileButton extends StatelessWidget {
   ProfileButton({
     required this.onTap,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:spend_sync/bottom_navbar.dart';
-import 'package:spend_sync/screens/profile.dart';
+import 'package:spend_sync/const/colors.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -17,14 +17,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Spend Sync',
       theme: ThemeData(
-        useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff131921)).copyWith(background: Color(0xff393E46)),
+        useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: darkModeColors().primary).copyWith(background: darkModeColors().secondary),
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       home: BottomNavBar(),
