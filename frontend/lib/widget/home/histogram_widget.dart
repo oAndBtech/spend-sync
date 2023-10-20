@@ -78,7 +78,7 @@ class _HistogramWidgetState extends State<HistogramWidget> {
 
   Widget bottomTitles(double value, TitleMeta meta) {
     TextStyle style = GoogleFonts.inter(
-        fontSize: 15, color: darkModeColors().textColor, letterSpacing: -0.2);
+        fontSize: 12, color: darkModeColors().textColor, letterSpacing: -0.2);
     String text;
     switch (value.toInt()) {
       case 0:
@@ -117,7 +117,7 @@ class _HistogramWidgetState extends State<HistogramWidget> {
       return Container();
     }
    TextStyle style = GoogleFonts.inter(
-        fontSize: 15, color: darkModeColors().textColor, letterSpacing: -0.2);
+        fontSize: 12, color: darkModeColors().textColor, letterSpacing: -0.2);
     return SideTitleWidget(
       axisSide: meta.axisSide,
       child: Text(

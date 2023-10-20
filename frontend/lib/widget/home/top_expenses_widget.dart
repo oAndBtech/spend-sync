@@ -67,18 +67,6 @@ class TopExpensesElement extends StatelessWidget {
               ],
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-          //   child: Center(
-          //     child: Container(
-          //       height: 1,
-          //       width: width * 0.8,
-          //       decoration: BoxDecoration(
-          //         color: darkModeColors().secondary.withOpacity(0.8),
-          //       ),
-          //     ),
-          //   ),
-          // ),
         ],
       ),
     );
