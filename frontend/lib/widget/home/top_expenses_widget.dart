@@ -36,7 +36,7 @@ class TopExpensesElement extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 2),
+            padding: EdgeInsets.symmetric(horizontal: width*0.08, vertical: 2),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
