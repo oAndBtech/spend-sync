@@ -19,7 +19,7 @@ class TopExpensesElement extends StatelessWidget {
 
     return SizedBox(
       // color: darkModeColors().cardColor,
-      height: 40,
+      height: 36,
       width: width * 0.8,
       child: Column(
         children: [
@@ -28,7 +28,7 @@ class TopExpensesElement extends StatelessWidget {
             child: Center(
               child: Container(
                 height: 1,
-                width: width * 0.8,
+                width: width * 0.75,
                 decoration: BoxDecoration(
                   color: darkModeColors().secondary.withOpacity(0.8),
                 ),
@@ -36,17 +36,19 @@ class TopExpensesElement extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 2),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 categoryIcon,
                 const SizedBox(
-                  width: 8,
+                  width: 12,
                 ),
                 Text(
                   categoryName,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.inter(
                           color: darkModeColors().textColor,
                           fontSize: 18.0,
@@ -65,18 +67,18 @@ class TopExpensesElement extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-            child: Center(
-              child: Container(
-                height: 1,
-                width: width * 0.8,
-                decoration: BoxDecoration(
-                  color: darkModeColors().secondary.withOpacity(0.8),
-                ),
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+          //   child: Center(
+          //     child: Container(
+          //       height: 1,
+          //       width: width * 0.8,
+          //       decoration: BoxDecoration(
+          //         color: darkModeColors().secondary.withOpacity(0.8),
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
