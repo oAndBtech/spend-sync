@@ -12,4 +12,6 @@ class darkModeColors{
   final Color cardColor = const Color(0xff222831);
   final Color buttonColor = const Color(0xff222831).withOpacity(0.6);
   final Color textButton = const Color(0xff00A3FF);
+  final Color white = Colors.white;
+  final Color black = Colors.black;
 }

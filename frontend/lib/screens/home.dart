@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
@@ -9,73 +10,142 @@ import 'package:spend_sync/widget/home/histogram_widget.dart';
 import 'package:spend_sync/widget/home/top_expenses_widget.dart';
 import 'package:spend_sync/widget/see_more_button.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<Widget> list = [
+    TopExpensesElement(
+        amount: '\$ 25',
+        categoryIcon: Icon(
+          FontAwesomeIcons.wineBottle,
+          color: darkModeColors().textColor,
+        ),
+        categoryName: 'Cold Drinks'),
+    TopExpensesElement(
+        amount: '\$ 52',
+        categoryIcon:
+            Icon(FontAwesomeIcons.shirt, color: darkModeColors().textColor),
+        categoryName: 'Clothes'),
+    TopExpensesElement(
+        amount: '\$ 6',
+        categoryIcon: Icon(FontAwesomeIcons.bottleWater,
+            color: darkModeColors().textColor),
+        categoryName: 'Fuel')
+  ];
+
+  Map<UserModel, String> sampleData = {
+    UserModel(
+        name: "User 1",
+        email: "user1@example.com",
+        pic: "url_to_image",
+        isFriend: true,
+        phone: "1234567890"): "\$ 100",
+    UserModel(
+        name: "User 2",
+        email: "user2@example.com",
+        pic: "url_to_image",
+        isFriend: true,
+        phone: "9876543210"): "\$ 50",
+    UserModel(
+        name: "User 3",
+        email: "user3@example.com",
+        pic: "url_to_image",
+        isFriend: false,
+        phone: "1234567890"): "\$ 100",
+    UserModel(
+        name: "User 4",
+        email: "user4@example.com",
+        pic: "url_to_image",
+        isFriend: true,
+        phone: "9876543210"): "\$ 50",
+    UserModel(
+        name: "User 5",
+        email: "user5@example.com",
+        pic: "url_to_image",
+        isFriend: false,
+        phone: "1234567890"): "\$ 100",
+    UserModel(
+        name: "User 6",
+        email: "user6@example.com",
+        pic: "url_to_image",
+        isFriend: true,
+        phone: "9876543210"): "\$ 50",
+  };
+  @override
   Widget build(BuildContext context) {
-    List<Widget> list = [
-      TopExpensesElement(
-          amount: '\$ 25',
-          categoryIcon: Icon(
-            FontAwesomeIcons.wineBottle,
-            color: darkModeColors().textColor,
-          ),
-          categoryName: 'Cold Drinks'),
-      TopExpensesElement(
-          amount: '\$ 52',
-          categoryIcon:
-              Icon(FontAwesomeIcons.shirt, color: darkModeColors().textColor),
-          categoryName: 'Clothes'),
-      TopExpensesElement(
-          amount: '\$ 6',
-          categoryIcon: Icon(FontAwesomeIcons.bottleWater,
-              color: darkModeColors().textColor),
-          categoryName: 'Fuel')
-    ];
-
-    Map<UserModel, String> sampleData = {
-      UserModel(
-          name: "User 1",
-          email: "user1@example.com",
-          pic: "url_to_image",
-          isFriend: true,
-          phone: "1234567890"): "\$ 100",
-      UserModel(
-          name: "User 2",
-          email: "user2@example.com",
-          pic: "url_to_image",
-          isFriend: true,
-          phone: "9876543210"): "\$ 50",
-      UserModel(
-          name: "User 3",
-          email: "user3@example.com",
-          pic: "url_to_image",
-          isFriend: false,
-          phone: "1234567890"): "\$ 100",
-      UserModel(
-          name: "User 4",
-          email: "user4@example.com",
-          pic: "url_to_image",
-          isFriend: true,
-          phone: "9876543210"): "\$ 50",
-      UserModel(
-          name: "User 5",
-          email: "user5@example.com",
-          pic: "url_to_image",
-          isFriend: false,
-          phone: "1234567890"): "\$ 100",
-      UserModel(
-          name: "User 6",
-          email: "user6@example.com",
-          pic: "url_to_image",
-          isFriend: true,
-          phone: "9876543210"): "\$ 50",
-    };
-
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+        floatingActionButton: SpeedDial(
+          activeIcon:Icons.close ,
+          icon: Icons.add,
+          backgroundColor: darkModeColors().blueColor,
+          activeBackgroundColor: darkModeColors().redColor,
+          overlayColor: darkModeColors().black,
+          overlayOpacity: 0.4,
+           children: [ //TODO:change icons and colors
+            SpeedDialChild(
+              onTap: (){},
+              shape: const CircleBorder(),
+              label: 'Add Expense',
+              child: const Icon(Icons.add),
+              labelStyle: GoogleFonts.inter(
+                fontWeight: FontWeight.w400,
+                letterSpacing: -0.2,
+                color: darkModeColors().black
+              )
+            ),
+            SpeedDialChild(
+              onTap: (){},
+              shape: const CircleBorder(),
+              label: 'Add Income',
+              child: const Icon(Icons.add),
+              labelStyle: GoogleFonts.inter(
+                fontWeight: FontWeight.w400,
+                letterSpacing: -0.2,
+                color: darkModeColors().black
+              )
+            ),
+            SpeedDialChild(
+              onTap: (){},
+              shape: const CircleBorder(),
+              label: 'Take Money From',
+              child: const Icon(Icons.add),
+              labelStyle: GoogleFonts.inter(
+                fontWeight: FontWeight.w400,
+                letterSpacing: -0.2,
+                color: darkModeColors().black
+              )
+            ),
+            SpeedDialChild(
+              onTap: (){},
+              shape: const CircleBorder(),
+              label: 'Give Money To',
+              child: const Icon(Icons.add),
+              labelStyle: GoogleFonts.inter(
+                fontWeight: FontWeight.w400,
+                letterSpacing: -0.2,
+                color: darkModeColors().black
+              )
+            ),
+            SpeedDialChild(
+              onTap: (){},
+              shape: const CircleBorder(),
+              label: 'Split Bill',
+              child: const Icon(Icons.add),
+              labelStyle: GoogleFonts.inter(
+                fontWeight: FontWeight.w400,
+                letterSpacing: -0.2,
+                color: darkModeColors().black
+              )
+            ),
+           ],
+        ),
         body: SafeArea(
             child: Column(
       children: [
@@ -113,7 +183,7 @@ class HomeScreen extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Current balance',
-                                     maxLines: 1,
+                                    maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                     style: GoogleFonts.inter(
                                       color: darkModeColors().textColor,
