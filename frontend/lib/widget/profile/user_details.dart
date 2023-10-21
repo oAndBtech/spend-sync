@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:fluttertoast/fluttertoast.dart'; // Import the FlutterToast library
 
 class UserDetails extends StatelessWidget {
   final String imageLink;
@@ -10,7 +11,7 @@ class UserDetails extends StatelessWidget {
   final String usersMailId;
   final String upiId;
   const UserDetails(
-      {super.key,
+      {Key? key,
       required this.imageLink,
       required this.usersName,
       required this.usersMailId,
@@ -61,20 +62,15 @@ class UserDetails extends StatelessWidget {
                 fontWeight: FontWeight.w400,
               ),
             ),
-            // const SizedBox(width: 7.0,),
             InkWell(
               borderRadius: BorderRadius.circular(24),
               onTap: () {
                 Clipboard.setData(ClipboardData(text: upiId));
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                  content: Center(
-                    child: Text(
-                      'UPI ID Copied',
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  duration: Duration(milliseconds: 300),
-                ));
+                Fluttertoast.showToast(
+                  msg: 'UPI ID Copied',
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.BOTTOM,
+                );
               },
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(7, 0, 5, 3),

@@ -11,7 +11,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String image =
-        "https://e1.pxfuel.com/desktop-wallpaper/810/988/desktop-wallpaper-dani-daniels-by-kimo006-danny-daniel.jpg";
+        "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1697914018~exp=1697914618~hmac=b3ec7887b1e0980e9cebfed564addfa7f44e50d0aecfae54c934fdfa2ec8880b";
 
     return Scaffold(
       body: SafeArea(
@@ -23,13 +23,13 @@ class ProfileScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     const SizedBox(
-                      height: 55.0,
+                      height: 30.0,
                     ),
                     UserDetails(
                         imageLink: image,
-                        usersName: 'Dani Daniels',
-                        usersMailId: 'danidaniels.business@gmail.com',
-                        upiId: 'danidaniels69@ybl'),
+                        usersName: 'O & B Tech',
+                        usersMailId: 'oandb.tech@gmail.com',
+                        upiId: 'oandbtech45@ybl'),
                     const SizedBox(
                       height: 22.0,
                     ),
