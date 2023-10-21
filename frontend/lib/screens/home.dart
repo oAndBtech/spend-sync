@@ -113,6 +113,8 @@ class HomeScreen extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Current balance',
+                                     maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                     style: GoogleFonts.inter(
                                       color: darkModeColors().textColor,
                                       fontSize: 18.0,
@@ -153,7 +155,7 @@ class HomeScreen extends StatelessWidget {
                               child: Column(
                                 children: [
                                   Text(
-                                    'This Month\'s balance',
+                                    'This Month\'s Expense',
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                     style: GoogleFonts.inter(
@@ -369,7 +371,6 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-
 
                   const SizedBox(
                     height: 28.0,

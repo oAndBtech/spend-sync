@@ -11,8 +11,8 @@ class GridViewWidget extends StatelessWidget {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 4,
-              mainAxisSpacing: 16.0,
-              crossAxisSpacing: 16.0,
+              mainAxisSpacing: 6.0,
+              crossAxisSpacing: 6.0,
             ),
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
@@ -20,12 +20,10 @@ class GridViewWidget extends StatelessWidget {
            itemBuilder: (BuildContext context, int index) {
               return isFriend? ProfileItemWidget(
                 onTap: (){},
-                // profilePic: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS-A_IpSIrFyh9HK_x9jWVc4o_jFu01HU4HBhznpXI4fnWj7NuE',
                 name: "Apple Don",
               ) :
               GroupProfileItemWidget(
                 onTap: (){},
-                // profilePic: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS-A_IpSIrFyh9HK_x9jWVc4o_jFu01HU4HBhznpXI4fnWj7NuE',
                 name: "Apple Don",
               );
               

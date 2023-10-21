@@ -17,7 +17,8 @@ class _GiveTakeListWidgetState extends State<GiveTakeListWidget> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Container( //add padding and color/decoration while making the screen page ,
+    return Container(
+      //add padding and color/decoration while making the screen page ,
 
       // padding: const EdgeInsets.only(top: 12, bottom: 12),
       // decoration: BoxDecoration(
@@ -133,12 +134,34 @@ class _GiveTakeListWidgetState extends State<GiveTakeListWidget> {
           ),
         ),
         const SizedBox(width: 20),
-        ElevatedButton(
-          onPressed: () {},
-          child: Text(
-            'Request',
-            style: GoogleFonts.inter(
-                color: darkModeColors().primary, fontWeight: FontWeight.w300),
+        // ElevatedButton(
+        //   onPressed: () {},
+        //   child: Text(
+        //     'Request',
+        //     style: GoogleFonts.inter(
+        //         color: darkModeColors().primary, fontWeight: FontWeight.w300),
+        //   ),
+        // ),
+        InkWell(
+          onTap: () {
+            print('Request Clicked');
+          },
+          child: Container(
+            height: 28,
+            decoration: BoxDecoration(
+                color: darkModeColors().textColor,
+                borderRadius: BorderRadius.circular(12)),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 8, right: 8, bottom: 1),
+                child: Text(
+                  'Request',
+                  style: GoogleFonts.inter(
+                      color: darkModeColors().primary,
+                      fontWeight: FontWeight.w300),
+                ),
+              ),
+            ),
           ),
         ),
       ],
