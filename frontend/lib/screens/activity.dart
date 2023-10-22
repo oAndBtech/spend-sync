@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/widget/activity/pie_chart.dart';
 import 'package:spend_sync/widget/activity/transaction_element.dart';
 import 'package:spend_sync/widget/app_bar.dart';
 import 'package:spend_sync/widget/graph_widget.dart';
@@ -93,6 +94,38 @@ class _ActivityScreenState extends State<ActivityScreen> {
               child: Column(
                 children: [
                   // pie chart
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 24, left: 18, right: 18),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: darkModeColors().cardColor,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Spend Analysis',
+                              style: GoogleFonts.inter(
+                                color: darkModeColors().textColor,
+                                fontSize: 21.0,
+                                letterSpacing: -0.2,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const PieCharWidget(),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+
 
                   // transaction history
                   Padding(
