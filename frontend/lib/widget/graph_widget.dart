@@ -16,11 +16,11 @@ class _GraphWidgetState extends State<GraphWidget> {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1.70,
+      aspectRatio: 1.4,
       child: Padding(
         padding: const EdgeInsets.only(
           right: 18,
-          left: 12,
+          left: 6,
           top: 24,
           bottom: 12,
         ),
@@ -33,8 +33,8 @@ class _GraphWidgetState extends State<GraphWidget> {
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     TextStyle style = GoogleFonts.inter(
-        fontWeight: FontWeight.w500,
-        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        fontSize: 12,
         color: darkModeColors().textColor,
         letterSpacing: -0.2);
     Widget text;
@@ -73,8 +73,8 @@ class _GraphWidgetState extends State<GraphWidget> {
 
   Widget leftTitleWidgets(double value, TitleMeta meta) {
     TextStyle style = GoogleFonts.inter(
-        fontWeight: FontWeight.w500,
-        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        fontSize: 12,
         color: darkModeColors().textColor,
         letterSpacing: -0.2);
     String text;
