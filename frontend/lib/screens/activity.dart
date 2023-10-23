@@ -77,6 +77,14 @@ class _ActivityScreenState extends State<ActivityScreen> {
     ),
   ];
 
+  Map<String, String> map = {
+    'Food': '\$ 50',
+    'Internet': '\$ 45',
+    'Mobile Bill': '\$ 69',
+    'Rent': '\$ 420',
+    'Cloths': '\$ 10',
+  };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,13 +127,20 @@ class _ActivityScreenState extends State<ActivityScreen> {
                             const SizedBox(
                               height: 10,
                             ),
-                            const PieCharWidget(),
+                            const PieCharWidget(
+                              dataMap: {
+                                'Food': 50,
+                                'Internet':  45,
+                                'Mobile Bill': 69,
+                                'Rent': 420,
+                                'Cloths': 10,
+                              },
+                            ),
                           ],
                         ),
                       ),
                     ),
                   ),
-
 
                   // transaction history
                   Padding(

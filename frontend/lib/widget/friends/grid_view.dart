@@ -14,7 +14,7 @@ class GridViewWidget extends StatelessWidget {
               mainAxisSpacing: 6.0,
               crossAxisSpacing: 6.0,
             ),
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemCount: 10,
            itemBuilder: (BuildContext context, int index) {

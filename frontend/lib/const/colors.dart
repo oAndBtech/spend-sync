@@ -16,4 +16,46 @@ class darkModeColors{
   final Color black = Colors.black;
   final Color skipButton = const Color(0xffEEEEEE).withOpacity(0.7);
   final Color blueTextButton = const Color(0xff018BD9);
+
+  final List<Color> pieChartColors = const[
+    Color(0xFF00796B), // Teal
+    Color(0xFFFF5722), // Deep Orange
+    Color(0xFF9C27B0), // Purple
+    Color(0xFF2196F3), // Blue
+    Color(0xFF795548), // Brown
+    Color(0xFF8BC34A), // Light Green
+    Color(0xFFE91E63), // Pink
+    Color(0xFFFFC107), // Amber
+    Color(0xFF3F51B5), // Indigo
+    Color(0xFF455A64), // Blue Grey
+    Color(0xFF9575CD),
+    Color(0xFF4CAF50), // Green
+    Color(0xFF795548), // Brown
+    Color(0xFFE91E63), // Pink
+    Color(0xFF009688), // Green
+    Color(0xFF512DA8), // Deep Purple
+    Color(0xFF607D8B), // Blue Grey
+    Color(0xFF00BCD4), // Cyan
+    Color(0xFFD84315), // Deep Orange
+    Color(0xFF1976D2), // Blue
+    Color(0xFF673AB7), // Deep Purple
+
+    // Color(0xFFFFB74D),
+    // Color(0xFFFF8A65),
+    // Color(0xFFD4E157),
+    // Color(0xFF9575CD),
+    // Color(0xFF7986CB),
+    // Color(0xFF64B5F6),
+    // Color(0xFF4FC3F7),
+    // Color(0xFF4DD0E1),
+    // Color(0xFF4DB6AC),
+    // Color(0xFF81C784),
+    // Color(0xFFAED581),
+    // Color(0xFF7986CB),
+    // Color(0xFF64B5F6),
+    // Color(0xFF4FC3F7),
+    // Color(0xFF4DD0E1),
+    // Color(0xFF4DB6AC),
+    // Color(0xFF81C784),
+  ];
 }
