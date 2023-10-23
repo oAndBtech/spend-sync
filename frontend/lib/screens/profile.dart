@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/screens/login.dart';
 import 'package:spend_sync/widget/app_bar.dart';
 import 'package:spend_sync/widget/profile/profile_button.dart';
 import 'package:spend_sync/widget/profile/user_details.dart';
@@ -17,7 +18,8 @@ class ProfileScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            const NewAppBar(isNotification: true, title: 'Profile', leadingIcon: 1),
+            const NewAppBar(
+                isNotification: true, title: 'Profile', leadingIcon: 1),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -37,7 +39,7 @@ class ProfileScreen extends StatelessWidget {
                         onTap: () {},
                         buttonText: 'Settings',
                         buttonType: 2,
-                        icon:  Icon(
+                        icon: Icon(
                           FontAwesomeIcons.gear,
                           color: darkModeColors().textColor,
                         )),
@@ -45,7 +47,7 @@ class ProfileScreen extends StatelessWidget {
                         onTap: () {},
                         buttonText: 'About',
                         buttonType: 4,
-                        icon:  Icon(
+                        icon: Icon(
                           FontAwesomeIcons.circleQuestion,
                           color: darkModeColors().textColor,
                         )),
@@ -96,14 +98,19 @@ class ProfileScreen extends StatelessWidget {
                       height: 28.0,
                     ),
                     ProfileButton(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => const LoginPage()));
+                        },
                         buttonText: 'Logout',
                         buttonType: 1,
                         icon: Icon(
                           FontAwesomeIcons.rightFromBracket,
                           color: darkModeColors().textColor,
                         )),
-                        const SizedBox(
+                    const SizedBox(
                       height: 28.0,
                     ),
                   ],
