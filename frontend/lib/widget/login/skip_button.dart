@@ -22,7 +22,7 @@ class SkipButtonWidget extends StatelessWidget {
       splashColor: Colors.transparent,
       onTap: onTap,
       child: Container(
-        height: 61,
+        height: 56,
         width: width * 0.85,
         decoration: BoxDecoration(
           color: darkModeColors().skipButton,
