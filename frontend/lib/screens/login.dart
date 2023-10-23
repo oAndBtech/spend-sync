@@ -15,8 +15,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
   @override
   Widget build(BuildContext context) {
+
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
         child: Expanded(
@@ -36,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 42,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 36),
+                    padding: EdgeInsets.only(left: width * 0.1),
                     child: Text(
                       'Welcome!',
                       style: GoogleFonts.inter(
@@ -47,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 36),
+                    padding: EdgeInsets.only(left: width * 0.1),
                     child: Text(
                       'Start keeping your spending records efficiently',
                       style: GoogleFonts.inter(
@@ -61,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 42,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 30),
+                    padding: EdgeInsets.only(left: width * 0.072),
                     child: LoginButton(
                         onTap: () {},
                         buttonText: 'Continue with Google',
@@ -75,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 20,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 30),
+                    padding: EdgeInsets.only(left: width * 0.072),
                     child: LoginButton(
                         onTap: () {},
                         buttonText: 'Continue with Facebook',
@@ -89,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 20,
                   ),
                   Padding(
-                      padding: const EdgeInsets.only(left: 30),
+                      padding: EdgeInsets.only(left: width * 0.072),
                       child: SkipButtonWidget(buttonText: 'Skip', onTap: () {})
                       ),
 
@@ -98,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
 
                   Padding(
-                    padding: const EdgeInsets.only(left: 36),
+                    padding: EdgeInsets.only(left: width * 0.1),
                     child: Row(
                       children: [
                         Text(
