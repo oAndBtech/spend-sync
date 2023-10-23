@@ -14,4 +14,6 @@ class darkModeColors{
   final Color textButton = const Color(0xff00A3FF);
   final Color white = Colors.white;
   final Color black = Colors.black;
+  final Color skipButton = const Color(0xffEEEEEE).withOpacity(0.7);
+  final Color blueTextButton = const Color(0xff018BD9);
 }
