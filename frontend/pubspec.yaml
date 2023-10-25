@@ -41,6 +41,7 @@ dependencies:
   flutter_speed_dial: ^7.0.0
   flutter_custom_clippers: ^2.1.0
   responsive_grid: ^2.4.4
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
