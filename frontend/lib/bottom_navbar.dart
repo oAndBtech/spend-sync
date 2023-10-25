@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/screens/activity.dart';
-import 'package:spend_sync/screens/home.dart';
+import 'package:spend_sync/screens/split_bill/home/home.dart';
 import 'package:spend_sync/screens/profile.dart';
 import 'package:spend_sync/screens/split_bill/split_bill.dart';
 import 'package:spend_sync/widget/drawer.dart';
