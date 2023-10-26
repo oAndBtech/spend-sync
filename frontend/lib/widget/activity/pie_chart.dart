@@ -1,10 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:responsive_grid/responsive_grid.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
 import 'package:spend_sync/widget/activity/indicator.dart';
 
@@ -17,36 +13,66 @@ class PieCharWidget extends StatefulWidget {
 }
 
 class _PieCharWidgetState extends State<PieCharWidget> {
+  int touchedIndex = -1;
+  double totalExpense = 0;
+
+  getTotalExpense(){
+    final data = widget.dataMap;
+    double total = 0;
+    for (var i = 0; i < data.length; i++) {
+      total += data.entries.elementAt(i).value;
+    }
+    setState(() {
+      totalExpense = total;
+    });
+  }
+  @override
+  void initState() {
+    getTotalExpense();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final colors = generateColors(widget.dataMap.length);
     final data = widget.dataMap;
+
+    // print(touchedIndex);
     return Column(
       children: [
         AspectRatio(
-          aspectRatio: 1.4,
-          child: PieChart(PieChartData(
-            pieTouchData: PieTouchData(
-              touchCallback: (FlTouchEvent event, pieTouchResponse) {
-                setState(() {
-                  if (!event.isInterestedForInteractions ||
-                      pieTouchResponse == null ||
-                      pieTouchResponse.touchedSection == null) {
-                    touchedIndex = -1;
-                    return;
-                  }
-                  touchedIndex =
-                      pieTouchResponse.touchedSection!.touchedSectionIndex;
-                });
-              },
-            ),
-            borderData: FlBorderData(
-              show: false,
-            ),
-            sectionsSpace: 0,
-            centerSpaceRadius: 50,
-            sections: pieSections(),
-          )),
+          aspectRatio: 1.6,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              AspectRatio(
+                aspectRatio: 1,
+                child: PieChart(PieChartData(
+                  pieTouchData: PieTouchData(
+                    touchCallback: (FlTouchEvent event, pieTouchResponse) {
+                      setState(() {
+                        if (
+                            pieTouchResponse == null ||
+                            pieTouchResponse.touchedSection == null) {
+                          // touchedIndex = -1;
+                          return;
+                        }
+                        touchedIndex =
+                            pieTouchResponse.touchedSection!.touchedSectionIndex;
+                      });
+                    },
+                  ),
+                  borderData: FlBorderData(
+                    show: false,
+                  ),
+                  sectionsSpace: 0,
+                  centerSpaceRadius: 40,
+                  sections: pieSections(),
+                )),
+              ),
+              Flexible(child: amountWidget(type: 'Total Expense', amount: '\$ $totalExpense',isClicked: touchedIndex!=-1, type2: touchedIndex!=-1 ? data.entries.elementAt(touchedIndex) : const MapEntry("", 0))),
+            ],
+          ),
         ),
             const SizedBox(height: 10,),
 
@@ -60,7 +86,7 @@ class _PieCharWidgetState extends State<PieCharWidget> {
     );
   }
 
-  int touchedIndex = -1;
+  
 
   List<PieChartSectionData> pieSections() {
     Map<String, double> data = widget.dataMap;
@@ -107,5 +133,86 @@ class _PieCharWidgetState extends State<PieCharWidget> {
       );
     });
     return list;
+  }
+  Widget amountWidget({required String type ,required String amount,required bool isClicked, required MapEntry<String,double> type2}){
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            type,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: GoogleFonts.inter(
+              color: darkModeColors().textColor,
+              fontSize: 17,
+              fontWeight: FontWeight.w600,
+              letterSpacing: -0.2
+            ),
+          ),
+          Text(
+            amount,
+            style: GoogleFonts.inter(
+              color: darkModeColors().textColor,
+              fontSize: 17,
+              fontWeight: FontWeight.w600,
+              letterSpacing: -0.2
+            ),
+          ),
+          const Spacer(),
+          isClicked? Text(
+            type2.key,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: GoogleFonts.inter(
+              color: darkModeColors().textColor,
+              fontSize: 17,
+              fontWeight: FontWeight.w600,
+              letterSpacing: -0.2
+            ),
+          ): Container(),
+          isClicked?Text(
+            '\$ ${type2.value}',
+            style: GoogleFonts.inter(
+              color: darkModeColors().textColor,
+              fontSize: 17,
+              fontWeight: FontWeight.w600,
+              letterSpacing: -0.2
+            ),
+          ):Container(),
+          const Spacer(),
+
+        ],
+      ),
+    );
+  }
+  Widget whenItemClicked({required String type ,required String amount}){
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            type,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: GoogleFonts.inter(
+              color: darkModeColors().textColor,
+              fontSize: 17,
+              fontWeight: FontWeight.w600,
+              letterSpacing: -0.2
+            ),
+          ),
+          Text(
+            amount,
+            style: GoogleFonts.inter(
+              color: darkModeColors().textColor,
+              fontSize: 17,
+              fontWeight: FontWeight.w600,
+              letterSpacing: -0.2
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
