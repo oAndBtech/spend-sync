@@ -21,7 +21,7 @@ class GroupProfileItemWidget extends StatelessWidget {
       highlightColor: Colors.transparent,
       onTap: (){onTap();},
       child: SizedBox(
-        width: 100,
+        width: 90,
         height: 130,
         child: Column(
           mainAxisSize: MainAxisSize.min,

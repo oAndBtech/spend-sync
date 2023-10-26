@@ -2,12 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/services/user_model.dart';
 import 'package:spend_sync/widget/friends/grid_view.dart';
 
-class FriendsTab extends StatelessWidget {
+class FriendsTab extends StatefulWidget {
   const FriendsTab({super.key});
 
-  final count = 45; //TODO:change this according to user
+  @override
+  State<FriendsTab> createState() => _FriendsTabState();
+}
+
+class _FriendsTabState extends State<FriendsTab> {
+  // final count = 45; 
+ //TODO:change this according to user
+  List<UserModel> dummydata = List.generate(20, (index) => UserModel(name: "Apple Don", email: "email", pic: "pic"));
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +60,11 @@ class FriendsTab extends StatelessWidget {
             const SizedBox(
               height: 3,
             ),
-            const GridViewWidget(),
+            Center(
+              child: GridViewWidget(
+                listOfData: dummydata,
+              ),
+            ),
             const SizedBox(
               height: 30,
             ),

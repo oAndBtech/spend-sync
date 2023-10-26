@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:spend_sync/services/user_model.dart';
 import 'package:spend_sync/widget/friends/grid_view.dart';
 
-class GroupsTab extends StatelessWidget {
+class GroupsTab extends StatefulWidget {
   const GroupsTab({super.key});
 
-  final count = 45; //TODO:change this according to user
+  @override
+  State<GroupsTab> createState() => _GroupsTabState();
+}
+
+class _GroupsTabState extends State<GroupsTab> {
+  // final count = 45; 
+ //TODO:change this according to user
+  final List<UserModel> dummydata = List.generate(20, (index) => UserModel(name: "Apple Don", email: "email", pic: "pic"));
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +25,19 @@ class GroupsTab extends StatelessWidget {
           size: 30,
         ),
       ),
-      body: const SingleChildScrollView(
+      body:  SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
-            GridViewWidget(
-              isFriend: false,
+            Center(
+              child: GridViewWidget(
+                listOfData: dummydata,
+                isFriend: false,
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
           ],

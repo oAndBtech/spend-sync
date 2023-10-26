@@ -135,84 +135,53 @@ class _PieCharWidgetState extends State<PieCharWidget> {
     return list;
   }
   Widget amountWidget({required String type ,required String amount,required bool isClicked, required MapEntry<String,double> type2}){
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            type,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.inter(
-              color: darkModeColors().textColor,
-              fontSize: 17,
-              fontWeight: FontWeight.w600,
-              letterSpacing: -0.2
-            ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text(
+          type,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: GoogleFonts.inter(
+            color: darkModeColors().textColor,
+            fontSize: 17,
+            fontWeight: FontWeight.w600,
+            letterSpacing: -0.2
           ),
-          Text(
-            amount,
-            style: GoogleFonts.inter(
-              color: darkModeColors().textColor,
-              fontSize: 17,
-              fontWeight: FontWeight.w600,
-              letterSpacing: -0.2
-            ),
+        ),
+        Text(
+          amount,
+          style: GoogleFonts.inter(
+            color: darkModeColors().textColor,
+            fontSize: 17,
+            fontWeight: FontWeight.w600,
+            letterSpacing: -0.2
           ),
-          const Spacer(),
-          isClicked? Text(
-            type2.key,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.inter(
-              color: darkModeColors().textColor,
-              fontSize: 17,
-              fontWeight: FontWeight.w600,
-              letterSpacing: -0.2
-            ),
-          ): Container(),
-          isClicked?Text(
-            '\$ ${type2.value}',
-            style: GoogleFonts.inter(
-              color: darkModeColors().textColor,
-              fontSize: 17,
-              fontWeight: FontWeight.w600,
-              letterSpacing: -0.2
-            ),
-          ):Container(),
-          const Spacer(),
+        ),
+        const Spacer(),
+        isClicked? Text(
+          type2.key,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: GoogleFonts.inter(
+            color: darkModeColors().textColor,
+            fontSize: 17,
+            fontWeight: FontWeight.w600,
+            letterSpacing: -0.2
+          ),
+        ): Container(),
+        isClicked?Text(
+          '\$ ${type2.value}',
+          style: GoogleFonts.inter(
+            color: darkModeColors().textColor,
+            fontSize: 17,
+            fontWeight: FontWeight.w600,
+            letterSpacing: -0.2
+          ),
+        ):Container(),
+        const Spacer(),
 
-        ],
-      ),
-    );
-  }
-  Widget whenItemClicked({required String type ,required String amount}){
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            type,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.inter(
-              color: darkModeColors().textColor,
-              fontSize: 17,
-              fontWeight: FontWeight.w600,
-              letterSpacing: -0.2
-            ),
-          ),
-          Text(
-            amount,
-            style: GoogleFonts.inter(
-              color: darkModeColors().textColor,
-              fontSize: 17,
-              fontWeight: FontWeight.w600,
-              letterSpacing: -0.2
-            ),
-          ),
-        ],
-      ),
+      ],
     );
   }
 }
