@@ -21,12 +21,32 @@ class _AddIncomePageState extends State<AddIncomePage> {
     'Entertainment',
     'Other'
   ];
+
+  String selectedDate = "";
+
+  String getCurrenctDate() {
+    String date = DateFormat('dd/MM/yyyy').format(DateTime.now());
+    setState(() {
+      selectedDate = date;
+    });
+    return date; //if needed
+  }
+
+  DateTime parseDateString(String date) {
+    return DateFormat('dd/MM/yyyy').parse(date);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getCurrenctDate();
+  }
+
+  TextEditingController amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-
-    TextEditingController _date = TextEditingController();
-
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
@@ -56,6 +76,7 @@ class _AddIncomePageState extends State<AddIncomePage> {
                               height: 58,
                               width: width * 0.78,
                               child: TextField(
+                                controller: amountController,
                                 keyboardType: TextInputType.number,
                                 decoration: InputDecoration(
                                   labelText: 'Amount',
@@ -68,19 +89,21 @@ class _AddIncomePageState extends State<AddIncomePage> {
                                   prefixIcon:
                                       const Icon(FontAwesomeIcons.dollarSign),
                                   focusColor: darkModeColors().textColor,
-                                  border: OutlineInputBorder(
+                                  enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
                                         width: 1,
                                         color: darkModeColors()
                                             .textColor
-                                            .withOpacity(0.75)),
+                                            .withOpacity(0.2)),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
                                         width: 1,
-                                        color: darkModeColors().textColor),
+                                        color: darkModeColors()
+                                            .textColor
+                                            .withOpacity(0.3)),
                                   ),
                                 ),
                                 style: GoogleFonts.inter(
@@ -113,19 +136,21 @@ class _AddIncomePageState extends State<AddIncomePage> {
                                     },
                                   ),
                                   suffixIconColor: darkModeColors().textColor,
-                                  border: OutlineInputBorder(
+                                  enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
                                         width: 1,
                                         color: darkModeColors()
                                             .textColor
-                                            .withOpacity(0.75)),
+                                            .withOpacity(0.2)),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
                                         width: 1,
-                                        color: darkModeColors().textColor),
+                                        color: darkModeColors()
+                                            .textColor
+                                            .withOpacity(0.2)),
                                   ),
                                 ),
                                 style: GoogleFonts.inter(
@@ -141,9 +166,10 @@ class _AddIncomePageState extends State<AddIncomePage> {
                               height: 58,
                               width: width * 0.78,
                               child: TextField(
-                                controller: _date,
+                                controller:
+                                    TextEditingController(text: selectedDate),
                                 decoration: InputDecoration(
-                                  labelText: 'Date', 
+                                  labelText: 'Date',
                                   labelStyle: GoogleFonts.inter(
                                     color: darkModeColors()
                                         .textColor
@@ -154,21 +180,21 @@ class _AddIncomePageState extends State<AddIncomePage> {
                                     size: 24,
                                   ),
                                   prefixIconColor: darkModeColors().textColor,
-                                  border: OutlineInputBorder(
+                                  enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
-                                      width: 1,
-                                      color: darkModeColors()
-                                          .textColor
-                                          .withOpacity(0.75),
-                                    ),
+                                        width: 1,
+                                        color: darkModeColors()
+                                            .textColor
+                                            .withOpacity(0.2)),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
-                                      width: 1,
-                                      color: darkModeColors().textColor,
-                                    ),
+                                        width: 1,
+                                        color: darkModeColors()
+                                            .textColor
+                                            .withOpacity(0.2)),
                                   ),
                                 ),
                                 style: GoogleFonts.inter(
@@ -176,15 +202,20 @@ class _AddIncomePageState extends State<AddIncomePage> {
                                 ),
                                 readOnly: true,
                                 onTap: () async {
+                                  DateTime initDate =
+                                      parseDateString(selectedDate);
+                                  print(initDate);
                                   final DateTime? picked = await showDatePicker(
                                     context: context,
-                                    initialDate: DateTime.now(),
+                                    initialDate: initDate,
                                     firstDate: DateTime(2000, 8),
                                     lastDate: DateTime(2101),
                                   );
                                   if (picked != null) {
-                                    _date.text =
-                                        DateFormat('dd/MM/yyyy').format(picked);
+                                    setState(() {
+                                      selectedDate = DateFormat('dd/MM/yyyy')
+                                          .format(picked);
+                                    });
                                   }
                                 },
                               ),
@@ -202,19 +233,21 @@ class _AddIncomePageState extends State<AddIncomePage> {
                                         .withOpacity(0.7),
                                     fontWeight: FontWeight.w400,
                                   ),
-                                  border: OutlineInputBorder(
+                                  enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
                                         width: 1,
                                         color: darkModeColors()
                                             .textColor
-                                            .withOpacity(0.75)),
+                                            .withOpacity(0.2)),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
                                         width: 1,
-                                        color: darkModeColors().textColor),
+                                        color: darkModeColors()
+                                            .textColor
+                                            .withOpacity(0.3)),
                                   ),
                                 ),
                                 style: GoogleFonts.inter(

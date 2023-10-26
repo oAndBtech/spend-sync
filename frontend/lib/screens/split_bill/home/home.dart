@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
            children: [ //TODO:change icons and colors
             SpeedDialChild(
               onTap: (){
-                Navigator.pushReplacement(
+                Navigator.push(
         context, MaterialPageRoute(builder: (ctx) => AddExpensePage()));
               },
               shape: const CircleBorder(),
@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SpeedDialChild(
               onTap: (){
-                Navigator.pushReplacement(
+                Navigator.push(
         context, MaterialPageRoute(builder: (ctx) => AddIncomePage()));
               },
               shape: const CircleBorder(),

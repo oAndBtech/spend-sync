@@ -3,7 +3,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/bottom_navbar.dart';
 import 'package:spend_sync/const/colors.dart';
-import 'package:spend_sync/screens/split_bill/home/home.dart';
 
 class NewAppBar extends StatelessWidget {
   const NewAppBar({
@@ -41,13 +40,9 @@ class NewAppBar extends StatelessWidget {
                   color: darkModeColors().textColor,
                 ),
               )
-            : Padding(
+            :  Padding(
                 padding: const EdgeInsets.only(left: 28),
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx) => BottomNavBar()));
-                  },
-                  icon: const Icon(FontAwesomeIcons.arrowLeft),
+                child: BackButton(
                   color: darkModeColors().textColor,
                 ),
               ),
