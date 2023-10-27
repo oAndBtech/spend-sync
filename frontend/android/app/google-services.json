@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "732556822375",
+    "project_id": "spend-sync-15192003",
+    "storage_bucket": "spend-sync-15192003.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732556822375:android:7fce9883bb95dec44a51c2",
+        "android_client_info": {
+          "package_name": "com.oandb.spend_sync"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1eVlYNhqkyNoHZElF7XCvfuRfbhQZtWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
