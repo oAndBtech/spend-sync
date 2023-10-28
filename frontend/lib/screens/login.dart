@@ -1,12 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:spend_sync/bottom_navbar.dart';
 import 'package:spend_sync/const/colors.dart';
 import 'package:spend_sync/widget/login/blue_text_button.dart';
 import 'package:spend_sync/widget/login/login_button.dart';
 import 'package:spend_sync/widget/login/skip_button.dart';
+// import 'package:spend_sync/providers/null_provider_logout.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -17,6 +21,55 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   @override
+  Future<void> signInWithGoogle() async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+
+    try {
+      final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+
+      if (googleUser != null) {
+        final GoogleSignInAuthentication googleAuth =
+            await googleUser.authentication;
+
+        final AuthCredential credential = GoogleAuthProvider.credential(
+            accessToken: googleAuth.accessToken, idToken: googleAuth.idToken);
+
+        await auth.signInWithCredential(credential);
+      }
+    } catch (error) {
+      // snack bar / Toast
+      Fluttertoast.showToast(
+        msg: 'Failed to Sign in',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+      );
+    }
+  }
+
+  Future<bool> checkLoggedIn() {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+
+    return googleSignIn.isSignedIn();
+  }
+
+  Future<void> logout() async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+    // NullProviderAfterLogout.nullAfterLogout(ref);
+
+    await googleSignIn.signOut();
+  }
+
+  void isLoggedIn() async {
+    bool isLoggedIn = await checkLoggedIn();
+
+    if (isLoggedIn) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => BottomNavBar()));
+    }
+  }
+
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
 
@@ -65,8 +118,25 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(
                   padding: EdgeInsets.only(left: width * 0.072),
                   child: LoginButton(
-                      onTap: () {
-                        navigateToHomePage(context);
+                      onTap: () async {
+                        await signInWithGoogle();
+
+                        bool isLoggedIn = await checkLoggedIn();
+
+                        if (isLoggedIn) {
+                          var email = FirebaseAuth.instance.currentUser!.email
+                              .toString();
+
+                          if (email.isEmpty) {
+                            await logout();
+
+                            Fluttertoast.showToast(
+                              msg: 'Error',
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                            );
+                          }
+                        }
                       },
                       buttonText: 'Continue with Google',
                       icon: Icon(
