@@ -20,7 +20,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  @override
+// @override
   Future<void> signInWithGoogle() async {
     FirebaseAuth auth = FirebaseAuth.instance;
 
@@ -70,6 +70,13 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+  @override
+  void initState() {
+    isLoggedIn();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
 
@@ -123,19 +130,22 @@ class _LoginPageState extends State<LoginPage> {
 
                         bool isLoggedIn = await checkLoggedIn();
 
-                        if (isLoggedIn) {
-                          var email = FirebaseAuth.instance.currentUser!.email
-                              .toString();
+                        // if (isLoggedIn) {
+                        //   var email = FirebaseAuth.instance.currentUser!.email
+                        //       .toString();
 
-                          if (email.isEmpty) {
-                            await logout();
+                        //   if (email.isEmpty) {
+                        //     await logout();
 
-                            Fluttertoast.showToast(
-                              msg: 'Error',
-                              toastLength: Toast.LENGTH_SHORT,
-                              gravity: ToastGravity.BOTTOM,
-                            );
-                          }
+                        //     Fluttertoast.showToast(
+                        //       msg: 'Error',
+                        //       toastLength: Toast.LENGTH_SHORT,
+                        //       gravity: ToastGravity.BOTTOM,
+                        //     );
+                        //   }
+                        // }
+                        if(isLoggedIn){
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx)=>BottomNavBar()));
                         }
                       },
                       buttonText: 'Continue with Google',
@@ -152,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                   padding: EdgeInsets.only(left: width * 0.072),
                   child: LoginButton(
                       onTap: () {
-                        navigateToHomePage(context);
+                                                navigateToHomePage(context);
                       },
                       buttonText: 'Continue with Facebook',
                       icon: Icon(

@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:spend_sync/const/colors.dart';
 import 'package:spend_sync/screens/login.dart';
 import 'package:spend_sync/widget/app_bar.dart';
 import 'package:spend_sync/widget/profile/profile_button.dart';
 import 'package:spend_sync/widget/profile/user_details.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+   Future<void> logout() async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+    // NullProviderAfterLogout.nullAfterLogout(ref);
+
+    await googleSignIn.signOut();
+  }
   @override
   Widget build(BuildContext context) {
     String image =
@@ -98,7 +110,8 @@ class ProfileScreen extends StatelessWidget {
                       height: 28.0,
                     ),
                     ProfileButton(
-                        onTap: () {
+                        onTap: () async {
+                          await logout();
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
