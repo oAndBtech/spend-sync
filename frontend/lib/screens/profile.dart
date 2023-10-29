@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:spend_sync/const/colors.dart';
@@ -15,12 +16,13 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-   Future<void> logout() async {
+  Future<void> logout() async {
     final GoogleSignIn googleSignIn = GoogleSignIn();
     // NullProviderAfterLogout.nullAfterLogout(ref);
 
     await googleSignIn.signOut();
   }
+
   @override
   Widget build(BuildContext context) {
     String image =
@@ -116,6 +118,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               context,
                               MaterialPageRoute(
                                   builder: (ctx) => const LoginPage()));
+
+                          Fluttertoast.showToast(
+                            msg: 'Logged out',
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.BOTTOM,
+                          );
                         },
                         buttonText: 'Logout',
                         buttonType: 1,

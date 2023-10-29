@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,6 +22,15 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 // @override
+
+  Future <UserCredential> signInWithFacebook() async {
+    final LoginResult loginResult = await FacebookAuth.instance.login();
+
+    final OAuthCredential facebookAuthCredential = FacebookAuthProvider.credential(loginResult.accessToken!.token);
+
+    return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+  }
+
   Future<void> signInWithGoogle() async {
     FirebaseAuth auth = FirebaseAuth.instance;
 
@@ -144,8 +154,16 @@ class _LoginPageState extends State<LoginPage> {
                         //     );
                         //   }
                         // }
-                        if(isLoggedIn){
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx)=>BottomNavBar()));
+                        if (isLoggedIn) {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => BottomNavBar()));
+                          Fluttertoast.showToast(
+                            msg: 'Signed in with Google',
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.BOTTOM,
+                          );
                         }
                       },
                       buttonText: 'Continue with Google',
@@ -161,8 +179,9 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(
                   padding: EdgeInsets.only(left: width * 0.072),
                   child: LoginButton(
-                      onTap: () {
-                                                navigateToHomePage(context);
+                      onTap: () async {
+                        await signInWithFacebook();
+                        navigateToHomePage(context);
                       },
                       buttonText: 'Continue with Facebook',
                       icon: Icon(
