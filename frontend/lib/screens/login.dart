@@ -23,10 +23,11 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
 // @override
 
-  Future <UserCredential> signInWithFacebook() async {
+  Future<UserCredential> signInWithFacebook() async {
     final LoginResult loginResult = await FacebookAuth.instance.login();
 
-    final OAuthCredential facebookAuthCredential = FacebookAuthProvider.credential(loginResult.accessToken!.token);
+    final OAuthCredential facebookAuthCredential =
+        FacebookAuthProvider.credential(loginResult.accessToken!.token);
 
     return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
   }
@@ -80,6 +81,9 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+
+
+  // add init state for skip button
   @override
   void initState() {
     isLoggedIn();
@@ -197,9 +201,51 @@ class _LoginPageState extends State<LoginPage> {
                     padding: EdgeInsets.only(left: width * 0.072),
                     child: SkipButtonWidget(
                       buttonText: 'Skip',
-                      onTap: () {
-                        navigateToHomePage(context);
-                      },
+                      onTap: () => showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: Text(
+                            'Don\'t miss out',
+                            style: GoogleFonts.inter(
+                                color: darkModeColors().textColor,
+                                fontSize: 21.0,
+                                letterSpacing: -0.2,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          content: Text(
+                            'Sign up to keep your records safe forever',
+                            style: GoogleFonts.inter(
+                                color: darkModeColors().secondaryTextColor,
+                                fontSize: 18.0,
+                                letterSpacing: -0.2,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.pop(context),
+                              child: Text(
+                                'Sign up',
+                                style: GoogleFonts.inter(
+                                    color: darkModeColors().blueTextButton,
+                                    fontSize: 16.0,
+                                    letterSpacing: -0.2,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () => navigateToHomePage(context),
+                              child: Text(
+                                'Continue',
+                                style: GoogleFonts.inter(
+                                    color: darkModeColors().blueTextButton,
+                                    fontSize: 16.0,
+                                    letterSpacing: -0.2,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     )),
                 const SizedBox(
                   height: 20,
