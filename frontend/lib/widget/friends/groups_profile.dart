@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 
 class GroupProfileItemWidget extends StatelessWidget {
   const GroupProfileItemWidget({
@@ -43,7 +44,7 @@ class GroupProfileItemWidget extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: GoogleFonts.inter(
                 color: darkModeColors().textColor,
-                fontSize: 16.0,
+                fontSize: fontSizes().groupProfileName,
                 letterSpacing: -0.2,
                 fontWeight: FontWeight.w500,
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 
 class TransactionHistElement extends StatelessWidget {
   const TransactionHistElement(
@@ -39,7 +40,7 @@ class TransactionHistElement extends StatelessWidget {
                   categoryName, // color: 0xffEEEEEE, size 28
                   style: GoogleFonts.inter(
                       color: darkModeColors().textColor,
-                      fontSize: 18.0,
+                      fontSize: fontSizes().transactionCategoryName,
                       letterSpacing: -0.2,
                       fontWeight: FontWeight.w400),
                 ),
@@ -48,7 +49,7 @@ class TransactionHistElement extends StatelessWidget {
                   date,
                   style: GoogleFonts.inter(
                       color: darkModeColors().secondaryTextColor,
-                      fontSize: 14.0,
+                      fontSize: fontSizes().transactionDate,
                       letterSpacing: -0.2,
                       fontWeight: FontWeight.w300),
                 )
@@ -61,7 +62,7 @@ class TransactionHistElement extends StatelessWidget {
                 amount,
                 style: GoogleFonts.inter(
                     color: darkModeColors().textColor,
-                    fontSize: 18.0,
+                    fontSize: fontSizes().transactionAmount,
                     letterSpacing: -0.2,
                     fontWeight: FontWeight.w400),
               ),

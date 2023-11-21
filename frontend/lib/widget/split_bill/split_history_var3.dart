@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 
 // Someone requested and you paid
 
@@ -64,7 +65,7 @@ class _SplitHistoryState extends State<SplitHistory3> {
                 color: darkModeColors().textColor,
                 fontWeight: FontWeight.w300,
                 letterSpacing: -0.2,
-                fontSize: 16.0,
+                fontSize: fontSizes().infoLineSplitHistory,
               ),
             ),
           ),
@@ -77,7 +78,7 @@ class _SplitHistoryState extends State<SplitHistory3> {
                 color: darkModeColors().textColor,
                 fontWeight: FontWeight.w300,
                 letterSpacing: -0.2,
-                fontSize: 16.0,
+                fontSize: fontSizes().dateSplitHistory,
               ),
             ),
           ),
@@ -90,7 +91,7 @@ class _SplitHistoryState extends State<SplitHistory3> {
                 color: darkModeColors().textColor,
                 fontWeight: FontWeight.w700,
                 letterSpacing: -0.2,
-                fontSize: 24.0,
+                fontSize: fontSizes().billAmountSplitHistory,
               ),
             ),
           ),
@@ -103,7 +104,7 @@ class _SplitHistoryState extends State<SplitHistory3> {
                 color: darkModeColors().textColor,
                 fontWeight: FontWeight.w300,
                 letterSpacing: -0.2,
-                fontSize: 16.0,
+                fontSize: fontSizes().noOfPaidSplitHistory,
               ),
             ),
           ),
@@ -114,7 +115,7 @@ class _SplitHistoryState extends State<SplitHistory3> {
               color: darkModeColors().textColor,
               fontWeight: FontWeight.w500,
               letterSpacing: -0.2,
-              fontSize: 16.0,
+              fontSize: fontSizes().youPaidSplit3,
             ),
             ),
           ),

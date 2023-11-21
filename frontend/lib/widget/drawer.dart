@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 
 class SpendDrawer extends StatefulWidget {
   const SpendDrawer(
@@ -37,7 +38,7 @@ class _SpendDrawerState extends State<SpendDrawer> {
                 child: Text(
                   widget.userName,
                   style: GoogleFonts.inter(
-                    fontSize: 22,
+                    fontSize: fontSizes().drawerUserName,
                     fontWeight: FontWeight.w600,
                     letterSpacing: -0.2,
                     color: darkModeColors().textColor,
@@ -48,7 +49,7 @@ class _SpendDrawerState extends State<SpendDrawer> {
                 widget.emailID,
                 style: GoogleFonts.inter(
                   color: darkModeColors().textColor.withOpacity(0.4),
-                  fontSize: 14,
+                  fontSize: fontSizes().drawerEmail,
                   fontWeight: FontWeight.w400,
                   letterSpacing: -0.2,
                 ),
@@ -69,7 +70,7 @@ class _SpendDrawerState extends State<SpendDrawer> {
                   'Expense History',
                   textAlign: TextAlign.start,
                   style: GoogleFonts.inter(
-                    fontSize: 20,
+                    fontSize: fontSizes().drawerList,
                     fontWeight: FontWeight.w500,
                     color: darkModeColors().textColor,
                   ),
@@ -88,7 +89,7 @@ class _SpendDrawerState extends State<SpendDrawer> {
                   'Deep Analysis',
                   textAlign: TextAlign.start,
                   style: GoogleFonts.inter(
-                    fontSize: 20,
+                    fontSize: fontSizes().drawerList,
                     fontWeight: FontWeight.w500,
                     color: darkModeColors().textColor,
                   ),
@@ -107,7 +108,7 @@ class _SpendDrawerState extends State<SpendDrawer> {
                   'Settings',
                   textAlign: TextAlign.start,
                   style: GoogleFonts.inter(
-                    fontSize: 20,
+                    fontSize: fontSizes().drawerList,
                     fontWeight: FontWeight.w500,
                     color: darkModeColors().textColor,
                   ),
@@ -126,7 +127,7 @@ class _SpendDrawerState extends State<SpendDrawer> {
                   'Add friend',
                   textAlign: TextAlign.start,
                   style: GoogleFonts.inter(
-                    fontSize: 20,
+                    fontSize: fontSizes().drawerList,
                     fontWeight: FontWeight.w500,
                     color: darkModeColors().textColor,
                   ),
@@ -145,7 +146,7 @@ class _SpendDrawerState extends State<SpendDrawer> {
                   'Invite your friend',
                   textAlign: TextAlign.start,
                   style: GoogleFonts.inter(
-                    fontSize: 20,
+                    fontSize: fontSizes().drawerList,
                     fontWeight: FontWeight.w500,
                     color: darkModeColors().textColor,
                   ),
@@ -164,7 +165,7 @@ class _SpendDrawerState extends State<SpendDrawer> {
                   'About us',
                   textAlign: TextAlign.start,
                   style: GoogleFonts.inter(
-                    fontSize: 20,
+                    fontSize: fontSizes().drawerList,
                     fontWeight: FontWeight.w500,
                     color: darkModeColors().textColor,
                   ),
@@ -183,7 +184,7 @@ class _SpendDrawerState extends State<SpendDrawer> {
                   'Rate us',
                   textAlign: TextAlign.start,
                   style: GoogleFonts.inter(
-                    fontSize: 20,
+                    fontSize: fontSizes().drawerList,
                     fontWeight: FontWeight.w500,
                     color: darkModeColors().textColor,
                   ),

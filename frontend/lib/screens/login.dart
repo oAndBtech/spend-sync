@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:spend_sync/bottom_navbar.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 import 'package:spend_sync/widget/login/blue_text_button.dart';
 import 'package:spend_sync/widget/login/login_button.dart';
 import 'package:spend_sync/widget/login/skip_button.dart';
@@ -117,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                     'Welcome!',
                     style: GoogleFonts.inter(
                         color: darkModeColors().textColor,
-                        fontSize: 36.0,
+                        fontSize: fontSizes().welcomeLogin,
                         letterSpacing: -0.2,
                         fontWeight: FontWeight.w600),
                   ),
@@ -128,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                     'Start keeping your spending records efficiently',
                     style: GoogleFonts.inter(
                         color: darkModeColors().secondaryTextColor,
-                        fontSize: 21.0,
+                        fontSize: fontSizes().loginMoto,
                         letterSpacing: -0.2,
                         fontWeight: FontWeight.w400),
                   ),
@@ -208,7 +209,7 @@ class _LoginPageState extends State<LoginPage> {
                             'Don\'t miss out',
                             style: GoogleFonts.inter(
                                 color: darkModeColors().textColor,
-                                fontSize: 21.0,
+                                fontSize: fontSizes().skipDialogHeader,
                                 letterSpacing: -0.2,
                                 fontWeight: FontWeight.w500),
                           ),
@@ -216,7 +217,7 @@ class _LoginPageState extends State<LoginPage> {
                             'Sign up to keep your records safe forever',
                             style: GoogleFonts.inter(
                                 color: darkModeColors().secondaryTextColor,
-                                fontSize: 18.0,
+                                fontSize: fontSizes().skipDialogText,
                                 letterSpacing: -0.2,
                                 fontWeight: FontWeight.w400),
                           ),
@@ -227,7 +228,7 @@ class _LoginPageState extends State<LoginPage> {
                                 'Sign up',
                                 style: GoogleFonts.inter(
                                     color: darkModeColors().blueTextButton,
-                                    fontSize: 16.0,
+                                    fontSize: fontSizes().skipDialogButtons,
                                     letterSpacing: -0.2,
                                     fontWeight: FontWeight.w400),
                               ),
@@ -238,7 +239,7 @@ class _LoginPageState extends State<LoginPage> {
                                 'Continue',
                                 style: GoogleFonts.inter(
                                     color: darkModeColors().blueTextButton,
-                                    fontSize: 16.0,
+                                    fontSize: fontSizes().skipDialogButtons,
                                     letterSpacing: -0.2,
                                     fontWeight: FontWeight.w400),
                               ),
@@ -258,7 +259,7 @@ class _LoginPageState extends State<LoginPage> {
                         'Need help?',
                         style: GoogleFonts.inter(
                             color: darkModeColors().secondaryTextColor,
-                            fontSize: 18.0,
+                            fontSize: fontSizes().loginNeedHelp,
                             letterSpacing: -0.2,
                             fontWeight: FontWeight.w400),
                       ),
@@ -268,7 +269,7 @@ class _LoginPageState extends State<LoginPage> {
                       BlueTextButton(
                           onTap: () {},
                           buttonText: 'Contact us',
-                          custonFontSize: 18)
+                          custonFontSize: fontSizes().loginContactUsButton)
                     ],
                   ),
                 )

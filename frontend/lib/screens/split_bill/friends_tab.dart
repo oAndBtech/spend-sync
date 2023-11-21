@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 import 'package:spend_sync/services/user_model.dart';
 import 'package:spend_sync/widget/friends/grid_view.dart';
 
@@ -50,7 +51,7 @@ class _FriendsTabState extends State<FriendsTab> {
                     child: Text(
                       'Requests',
                       style: GoogleFonts.inter(
-                          fontSize: 18,
+                          fontSize: fontSizes().requestsFriendsTab,
                           color: darkModeColors().textButton,
                           fontWeight: FontWeight.w500,
                           letterSpacing: -0.2),

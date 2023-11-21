@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 import 'package:spend_sync/services/user_model.dart';
 
 class GiveTakeListWidget extends StatefulWidget {
@@ -71,7 +72,7 @@ class _GiveTakeListWidgetState extends State<GiveTakeListWidget> {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: GoogleFonts.inter(
-                fontSize: 18,
+                fontSize: fontSizes().giveTakeName,
                 color: darkModeColors().textColor,
                 letterSpacing: -0.2,
                 fontWeight: FontWeight.w400),
@@ -83,7 +84,7 @@ class _GiveTakeListWidgetState extends State<GiveTakeListWidget> {
           child: Text(
             amount,
             style: GoogleFonts.inter(
-                fontSize: 18,
+                fontSize: fontSizes().giveTakeAmount,
                 color: darkModeColors().textColor,
                 letterSpacing: -0.2,
                 fontWeight: FontWeight.w500),
@@ -115,7 +116,7 @@ class _GiveTakeListWidgetState extends State<GiveTakeListWidget> {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: GoogleFonts.inter(
-                fontSize: 18,
+                fontSize: fontSizes().giveTakeName,
                 color: darkModeColors().textColor,
                 letterSpacing: -0.2,
                 fontWeight: FontWeight.w400),
@@ -127,7 +128,7 @@ class _GiveTakeListWidgetState extends State<GiveTakeListWidget> {
           child: Text(
             amount,
             style: GoogleFonts.inter(
-                fontSize: 18,
+                fontSize: fontSizes().giveTakeAmount,
                 color: darkModeColors().textColor,
                 letterSpacing: -0.2,
                 fontWeight: FontWeight.w500),

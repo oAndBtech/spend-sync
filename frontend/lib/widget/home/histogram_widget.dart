@@ -2,6 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 
 class HistogramWidget extends StatefulWidget {
   const HistogramWidget({super.key});
@@ -78,7 +79,7 @@ class _HistogramWidgetState extends State<HistogramWidget> {
 
   Widget bottomTitles(double value, TitleMeta meta) {
     TextStyle style = GoogleFonts.inter(
-        fontSize: 12, color: darkModeColors().textColor, letterSpacing: -0.2);
+        fontSize: fontSizes().tilesFontSize, color: darkModeColors().textColor, letterSpacing: -0.2);
     String text;
     switch (value.toInt()) {
       case 0:
@@ -117,7 +118,7 @@ class _HistogramWidgetState extends State<HistogramWidget> {
       return Container();
     }
    TextStyle style = GoogleFonts.inter(
-        fontSize: 12, color: darkModeColors().textColor, letterSpacing: -0.2);
+        fontSize: fontSizes().tilesFontSize, color: darkModeColors().textColor, letterSpacing: -0.2);
     return SideTitleWidget(
       axisSide: meta.axisSide,
       child: Text(

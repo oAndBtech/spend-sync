@@ -3,7 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
-import 'package:fluttertoast/fluttertoast.dart'; // Import the FlutterToast library
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:spend_sync/const/fontSizes.dart'; // Import the FlutterToast library
 
 class UserDetails extends StatelessWidget {
   final String imageLink;
@@ -32,7 +33,7 @@ class UserDetails extends StatelessWidget {
         Text(
           usersName,
           style: GoogleFonts.inter(
-            fontSize: 32.0,
+            fontSize: fontSizes().userDetailsUserName,
             letterSpacing: -0.2,
             color: darkModeColors().textColor,
             fontWeight: FontWeight.w500,
@@ -41,7 +42,7 @@ class UserDetails extends StatelessWidget {
         Text(
           usersMailId,
           style: GoogleFonts.inter(
-            fontSize: 15.0,
+            fontSize: fontSizes().userDetailsEmail,
             letterSpacing: -0.2,
             color: darkModeColors().textColor.withOpacity(0.6),
             fontWeight: FontWeight.w400,
@@ -56,7 +57,7 @@ class UserDetails extends StatelessWidget {
             Text(
               'UPI ID : $upiId',
               style: GoogleFonts.inter(
-                fontSize: 15.0,
+                fontSize: fontSizes().userDetailsUPI,
                 letterSpacing: -0.2,
                 color: darkModeColors().textColor.withOpacity(0.6),
                 fontWeight: FontWeight.w400,

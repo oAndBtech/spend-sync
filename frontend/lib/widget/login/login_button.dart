@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 
 // ignore: must_be_immutable
 class LoginButton extends StatelessWidget {
@@ -46,7 +47,7 @@ class LoginButton extends StatelessWidget {
               buttonText,
               style: GoogleFonts.inter(
                   color: darkModeColors().textColor,
-                  fontSize: 20.0,
+                  fontSize: fontSizes().loginButtonFontSize,
                   letterSpacing: -0.2,
                   fontWeight: FontWeight.w400),
             ),

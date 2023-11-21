@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 
 class SeeMoreButton extends StatelessWidget {
   const SeeMoreButton({
@@ -21,7 +22,7 @@ class SeeMoreButton extends StatelessWidget {
         style: GoogleFonts.inter(
           color: darkModeColors().textColor,
           fontWeight: FontWeight.w300,
-          fontSize: 16,
+          fontSize: fontSizes().seeMoreButtonFontSize,
           letterSpacing: -0.2,
           decoration: TextDecoration.underline,
           decorationColor: darkModeColors().textColor

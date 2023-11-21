@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 import 'package:spend_sync/screens/split_bill/friends_tab.dart';
 import 'package:spend_sync/screens/split_bill/groups_tab.dart';
 import 'package:spend_sync/screens/split_bill/split_tab.dart';
@@ -54,7 +55,7 @@ class _SplitBillScreenState extends State<SplitBillScreen> {
                         indicatorSize: TabBarIndicatorSize.tab,
                         indicatorWeight: 2.2,
                         labelStyle: GoogleFonts.inter(
-                            fontSize: 16, letterSpacing: -0.2),
+                            fontSize: fontSizes().tabsFontSize, letterSpacing: -0.2),
                         tabs: const [
                           Tab(text: "Split"),
                           Tab(text: "Friends"),

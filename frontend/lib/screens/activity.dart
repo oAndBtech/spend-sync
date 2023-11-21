@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 import 'package:spend_sync/widget/activity/pie_chart.dart';
 import 'package:spend_sync/widget/activity/transaction_element.dart';
 import 'package:spend_sync/widget/app_bar.dart';
@@ -119,7 +120,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                               'Spend Analysis',
                               style: GoogleFonts.inter(
                                 color: darkModeColors().textColor,
-                                fontSize: 21.0,
+                                fontSize: fontSizes().activityCardHeader,
                                 letterSpacing: -0.2,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -160,7 +161,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                               'Transaction History',
                               style: GoogleFonts.inter(
                                 color: darkModeColors().textColor,
-                                fontSize: 21.0,
+                                fontSize: fontSizes().activityCardHeader,
                                 letterSpacing: -0.2,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -206,7 +207,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                               'Graphical Representation',
                               style: GoogleFonts.inter(
                                 color: darkModeColors().textColor,
-                                fontSize: 21.0,
+                                fontSize: fontSizes().activityCardHeader,
                                 letterSpacing: -0.2,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -239,7 +240,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                               'Last Splits',
                               style: GoogleFonts.inter(
                                 color: darkModeColors().textColor,
-                                fontSize: 21.0,
+                                fontSize: fontSizes().activityCardHeader,
                                 letterSpacing: -0.2,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -287,7 +288,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                                   'Average Spending',
                                   style: GoogleFonts.inter(
                                     color: darkModeColors().textColor,
-                                    fontSize: 21.0,
+                                    fontSize: fontSizes().activityCardHeader,
                                     letterSpacing: -0.2,
                                     fontWeight: FontWeight.w400,
                                   ),

@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/bottom_navbar.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 
 class NewAppBar extends StatelessWidget {
   const NewAppBar({
@@ -57,7 +58,7 @@ class NewAppBar extends StatelessWidget {
               color: darkModeColors().textColor,
               fontWeight: FontWeight.w500,
               letterSpacing: -0.2,
-              fontSize: 26.0,
+              fontSize: fontSizes().appBarFont,
             ),
           ),
         ),

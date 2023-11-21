@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 
 // Someone requested
 
@@ -66,7 +67,7 @@ class _SplitHistoryState extends State<SplitHistory2> {
                 color: darkModeColors().textColor,
                 fontWeight: FontWeight.w300,
                 letterSpacing: -0.2,
-                fontSize: 16.0,
+                fontSize: fontSizes().infoLineSplitHistory,
               ),
             ),
           ),
@@ -79,7 +80,7 @@ class _SplitHistoryState extends State<SplitHistory2> {
                 color: darkModeColors().textColor,
                 fontWeight: FontWeight.w300,
                 letterSpacing: -0.2,
-                fontSize: 16.0,
+                fontSize: fontSizes().dateSplitHistory,
               ),
             ),
           ),
@@ -92,7 +93,7 @@ class _SplitHistoryState extends State<SplitHistory2> {
                 color: darkModeColors().textColor,
                 fontWeight: FontWeight.w700,
                 letterSpacing: -0.2,
-                fontSize: 24.0,
+                fontSize: fontSizes().billAmountSplitHistory,
               ),
             ),
           ),
@@ -105,7 +106,7 @@ class _SplitHistoryState extends State<SplitHistory2> {
                 color: darkModeColors().textColor,
                 fontWeight: FontWeight.w300,
                 letterSpacing: -0.2,
-                fontSize: 16.0,
+                fontSize: fontSizes().noOfPaidSplitHistory,
               ),
             ),
           ),
@@ -131,7 +132,7 @@ class _SplitHistoryState extends State<SplitHistory2> {
                         color: darkModeColors().cardColor,
                         fontWeight: FontWeight.w300,
                         letterSpacing: -0.2,
-                        fontSize: 18.0,
+                        fontSize: fontSizes().buttonSplit2,
                       ),
                     ),
                     const Spacer(),

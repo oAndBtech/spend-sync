@@ -2,6 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 
 class GraphWidget extends StatefulWidget {
   const GraphWidget({super.key});
@@ -34,7 +35,7 @@ class _GraphWidgetState extends State<GraphWidget> {
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     TextStyle style = GoogleFonts.inter(
         fontWeight: FontWeight.w400,
-        fontSize: 12,
+        fontSize: fontSizes().tilesFontSize,
         color: darkModeColors().textColor,
         letterSpacing: -0.2);
     Widget text;
@@ -74,7 +75,7 @@ class _GraphWidgetState extends State<GraphWidget> {
   Widget leftTitleWidgets(double value, TitleMeta meta) {
     TextStyle style = GoogleFonts.inter(
         fontWeight: FontWeight.w400,
-        fontSize: 12,
+        fontSize: fontSizes().tilesFontSize,
         color: darkModeColors().textColor,
         letterSpacing: -0.2);
     String text;

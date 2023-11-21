@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 import 'package:spend_sync/widget/activity/indicator.dart';
 
 class PieCharWidget extends StatefulWidget {
@@ -144,7 +145,7 @@ class _PieCharWidgetState extends State<PieCharWidget> {
           overflow: TextOverflow.ellipsis,
           style: GoogleFonts.inter(
             color: darkModeColors().textColor,
-            fontSize: 17,
+            fontSize: fontSizes().pieChartType,
             fontWeight: FontWeight.w600,
             letterSpacing: -0.2
           ),
@@ -153,7 +154,7 @@ class _PieCharWidgetState extends State<PieCharWidget> {
           amount,
           style: GoogleFonts.inter(
             color: darkModeColors().textColor,
-            fontSize: 17,
+            fontSize: fontSizes().pieChartAmount,
             fontWeight: FontWeight.w600,
             letterSpacing: -0.2
           ),
@@ -165,7 +166,7 @@ class _PieCharWidgetState extends State<PieCharWidget> {
           overflow: TextOverflow.ellipsis,
           style: GoogleFonts.inter(
             color: darkModeColors().textColor,
-            fontSize: 17,
+            fontSize: fontSizes().pieChartTypeAfterClick,
             fontWeight: FontWeight.w600,
             letterSpacing: -0.2
           ),
@@ -174,7 +175,7 @@ class _PieCharWidgetState extends State<PieCharWidget> {
           '\$ ${type2.value}',
           style: GoogleFonts.inter(
             color: darkModeColors().textColor,
-            fontSize: 17,
+            fontSize: fontSizes().pieChartAmountAfterClick,
             fontWeight: FontWeight.w600,
             letterSpacing: -0.2
           ),

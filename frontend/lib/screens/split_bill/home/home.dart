@@ -3,6 +3,7 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 import 'package:spend_sync/screens/split_bill/home/add_expense_page.dart';
 import 'package:spend_sync/screens/split_bill/home/add_income_page.dart';
 import 'package:spend_sync/services/user_model.dart';
@@ -195,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     overflow: TextOverflow.ellipsis,
                                     style: GoogleFonts.inter(
                                       color: darkModeColors().textColor,
-                                      fontSize: 18.0,
+                                      fontSize: fontSizes().currMonthBalHome,
                                       letterSpacing: -0.2,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -204,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     '\$ 200',
                                     style: GoogleFonts.inter(
                                       color: darkModeColors().textColor,
-                                      fontSize: 18.0,
+                                      fontSize: fontSizes().currMonthAmountHome,
                                       letterSpacing: -0.2,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -238,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     overflow: TextOverflow.ellipsis,
                                     style: GoogleFonts.inter(
                                       color: darkModeColors().textColor,
-                                      fontSize: 18.0,
+                                      fontSize: fontSizes().currMonthBalHome,
                                       letterSpacing: -0.2,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -247,7 +248,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     '\$ 200',
                                     style: GoogleFonts.inter(
                                       color: darkModeColors().textColor,
-                                      fontSize: 18.0,
+                                      fontSize: fontSizes().currMonthAmountHome,
                                       letterSpacing: -0.2,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -282,7 +283,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               'Top Expenses',
                               style: GoogleFonts.inter(
                                 color: darkModeColors().textColor,
-                                fontSize: 21.0,
+                                fontSize: fontSizes().homePageCardHeader,
                                 letterSpacing: -0.2,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -345,7 +346,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   'Visual Representation',
                                   style: GoogleFonts.inter(
                                     color: darkModeColors().textColor,
-                                    fontSize: 21.0,
+                                    fontSize: fontSizes().homePageCardHeader,
                                     letterSpacing: -0.2,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -386,7 +387,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   'Give Money to :',
                                   style: GoogleFonts.inter(
                                     color: darkModeColors().textColor,
-                                    fontSize: 21.0,
+                                    fontSize: fontSizes().homePageCardHeader,
                                     letterSpacing: -0.2,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -429,7 +430,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   'Take Money from :',
                                   style: GoogleFonts.inter(
                                     color: darkModeColors().textColor,
-                                    fontSize: 21.0,
+                                    fontSize: fontSizes().homePageCardHeader,
                                     letterSpacing: -0.2,
                                     fontWeight: FontWeight.w400,
                                   ),

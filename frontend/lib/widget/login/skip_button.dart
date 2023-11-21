@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 
 class SkipButtonWidget extends StatelessWidget {
   const SkipButtonWidget({
@@ -37,7 +38,7 @@ class SkipButtonWidget extends StatelessWidget {
               buttonText,
               style: GoogleFonts.inter(
                   color: darkModeColors().cardColor,
-                  fontSize: 24.0,
+                  fontSize: fontSizes().skipButtonFontSize,
                   letterSpacing: -0.2,
                   fontWeight: FontWeight.w400),
             ),

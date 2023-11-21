@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 
 class TopExpensesElement extends StatelessWidget {
   const TopExpensesElement(
@@ -51,7 +52,7 @@ class TopExpensesElement extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.inter(
                           color: darkModeColors().textColor,
-                          fontSize: 18.0,
+                          fontSize: fontSizes().topExpensesCategory,
                           letterSpacing: -0.2,
                           fontWeight: FontWeight.w400),
                 ),
@@ -60,7 +61,7 @@ class TopExpensesElement extends StatelessWidget {
                       amount,
                       style: GoogleFonts.inter(
                           color: darkModeColors().textColor,
-                          fontSize: 18.0,
+                          fontSize: fontSizes().topExpensesAmount,
                           letterSpacing: -0.2,
                           fontWeight: FontWeight.w500),
                     )

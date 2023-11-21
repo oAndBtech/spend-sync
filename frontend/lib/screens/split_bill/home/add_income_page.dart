@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:spend_sync/const/colors.dart';
+import 'package:spend_sync/const/fontSizes.dart';
 import 'package:spend_sync/widget/app_bar.dart';
 
 class AddIncomePage extends StatefulWidget {
@@ -280,7 +281,7 @@ class _AddIncomePageState extends State<AddIncomePage> {
                                             color: darkModeColors().cardColor,
                                             fontWeight: FontWeight.w300,
                                             letterSpacing: -0.2,
-                                            fontSize: 18.0,
+                                            fontSize: fontSizes().addExpenseIncomeButton,
                                           ),
                                         ),
                                       ),
