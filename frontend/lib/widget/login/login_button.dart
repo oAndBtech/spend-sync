@@ -28,7 +28,7 @@ class LoginButton extends StatelessWidget {
       onTap: onTap,
       borderRadius: BorderRadius.circular(36),
       child: Container(
-        height: 61,
+        height: 52,
         width: width * 0.85,
         decoration: BoxDecoration(
             color: darkModeColors().buttonColor,
@@ -40,9 +40,9 @@ class LoginButton extends StatelessWidget {
           children: [    
             Padding(
               padding: const EdgeInsets.only(left: 12.0),
-              child: icon,  // size 32
+              child: icon,  // size 26
             ),
-            const SizedBox(width: 12),
+            const SizedBox(width: 10),
             Text(
               buttonText,
               style: GoogleFonts.inter(

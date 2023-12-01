@@ -175,7 +175,7 @@ class _LoginPageState extends State<LoginPage> {
                       icon: Icon(
                         FontAwesomeIcons.google,
                         color: darkModeColors().textColor,
-                        size: 32,
+                        size: 26,
                       )),
                 ),
                 const SizedBox(
@@ -192,7 +192,7 @@ class _LoginPageState extends State<LoginPage> {
                       icon: Icon(
                         FontAwesomeIcons.facebook,
                         color: darkModeColors().textColor,
-                        size: 32,
+                        size: 26,
                       )),
                 ),
                 const SizedBox(
