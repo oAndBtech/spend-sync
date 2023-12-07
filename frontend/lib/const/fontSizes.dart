@@ -21,6 +21,11 @@ class fontSizes {
   final double loginNeedHelp = 16;
   final double loginContactUsButton = 16;
 
+  // WelcomeSettings
+  final double perTextWS = 28;
+  final double lowerPerTextWS = 18;
+  final double questionsSize = 20;
+
   // Activity
   final double activityCardHeader = 18;
 
