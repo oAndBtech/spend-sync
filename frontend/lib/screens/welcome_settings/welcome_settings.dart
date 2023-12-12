@@ -23,12 +23,12 @@ class WelocomeSettings extends StatefulWidget {
 class _WelocomeSettingsState extends State<WelocomeSettings> {
   String currencyName = 'Choose your currency';
   final PageController pageController = PageController();
+  int currentPage = 0;
+  int questions = 3;
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    int currentPage = 0;
-    int questions = 0;
     return Scaffold(
         body: SafeArea(
             child: SingleChildScrollView(
@@ -71,7 +71,6 @@ class _WelocomeSettingsState extends State<WelocomeSettings> {
           SizedBox(
             height: 36,
           ),
-
           if (currentPage == 0) ...[
             Padding(
               padding: const EdgeInsets.only(top: 24, left: 18, right: 18),
@@ -167,8 +166,13 @@ class _WelocomeSettingsState extends State<WelocomeSettings> {
               width: width * 0.8,
               color: Colors.black,
             )
+          ] else if (currentPage == 2) ...[
+            Container(
+              height: 100,
+              width: width * 0.8,
+              color: Colors.black,
+            )
           ],
-
           SizedBox(height: 36),
           Padding(
             padding: const EdgeInsets.only(top: 24, left: 18, right: 18),
@@ -176,19 +180,29 @@ class _WelocomeSettingsState extends State<WelocomeSettings> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 NextPrevButton(
-                    onTap: () async{
-                      setState(() {
+                  currentPage: currentPage,
+                  onTap: () {
+                    setState(() {
+                      if (currentPage > 0) {
                         currentPage--;
-                      });
-                    },
-                    buttonText: 'Prev',
-                    icon: Icon(FontAwesomeIcons.chevronLeft,
-                        color: darkModeColors().textColor, size: 18)),
-                buildDotsIndicator(currentPage),
+                      }
+                    });
+                  },
+                  buttonText: 'Prev',
+                  icon: Icon(
+                    FontAwesomeIcons.chevronLeft,
+                    color: darkModeColors().textColor,
+                    size: 18,
+                  ),
+                ),
+                buildDotsIndicator(currentPage, questions),
                 NextPrevButton(
-                    onTap: () async{
+                    currentPage: currentPage,
+                    onTap: () {
                       setState(() {
-                        currentPage++;
+                        if (currentPage < questions - 1) {
+                          currentPage++;
+                        }
                       });
                     },
                     buttonText: 'Next',

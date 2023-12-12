@@ -8,6 +8,7 @@ class NextPrevButton extends StatelessWidget {
     required this.onTap,
     required this.buttonText,
     required this.icon,
+    required this.currentPage,
     this.start = true,
     Key? key,
   }) : super(key: key);
@@ -16,6 +17,7 @@ class NextPrevButton extends StatelessWidget {
   final String buttonText;
   final Icon icon;
   final bool start;
+  final int currentPage;
 
   @override
   Widget build(BuildContext context) {
@@ -40,17 +42,18 @@ class NextPrevButton extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 12.0),
-                    child: icon, // size 26
+                    child: icon,
                   ),
                   const SizedBox(width: 10),
                   Text(
                     buttonText,
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.inter(
-                        color: darkModeColors().textColor,
-                        fontSize: fontSizes().loginButtonFontSize,
-                        letterSpacing: -0.2,
-                        fontWeight: FontWeight.w400),
+                      color: darkModeColors().textColor,
+                      fontSize: fontSizes().loginButtonFontSize,
+                      letterSpacing: -0.2,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ],
               )
@@ -64,21 +67,21 @@ class NextPrevButton extends StatelessWidget {
                       buttonText,
                       overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.inter(
-                          color: darkModeColors().textColor,
-                          fontSize: fontSizes().loginButtonFontSize,
-                          letterSpacing: -0.2,
-                          fontWeight: FontWeight.w400),
+                        color: darkModeColors().textColor,
+                        fontSize: fontSizes().loginButtonFontSize,
+                        letterSpacing: -0.2,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ),
                   Spacer(),
                   Padding(
                     padding: const EdgeInsets.only(right: 12.0),
-                    child: icon, // size 26
+                    child: icon,
                   ),
                 ],
               ),
       ),
     );
-    ;
   }
 }
