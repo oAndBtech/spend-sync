@@ -9,6 +9,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:spend_sync/bottom_navbar.dart';
 import 'package:spend_sync/const/colors.dart';
 import 'package:spend_sync/const/fontSizes.dart';
+import 'package:spend_sync/screens/welcome_settings/welcome_settings.dart';
 import 'package:spend_sync/widget/login/blue_text_button.dart';
 import 'package:spend_sync/widget/login/login_button.dart';
 import 'package:spend_sync/widget/login/skip_button.dart';
@@ -81,8 +82,6 @@ class _LoginPageState extends State<LoginPage> {
           context, MaterialPageRoute(builder: (context) => BottomNavBar()));
     }
   }
-
-
 
   // add init state for skip button
   @override
@@ -163,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (ctx) => BottomNavBar()));
+                                  builder: (ctx) => WelocomeSettings()));
                           Fluttertoast.showToast(
                             msg: 'Signed in with Google',
                             toastLength: Toast.LENGTH_SHORT,
@@ -234,7 +233,12 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                             TextButton(
-                              onPressed: () => navigateToHomePage(context),
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (ctx) => WelocomeSettings()));
+                              },
                               child: Text(
                                 'Continue',
                                 style: GoogleFonts.inter(
